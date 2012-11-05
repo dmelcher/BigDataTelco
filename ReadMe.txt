@@ -1,0 +1,1 @@
+This demo demonstrates BIRT's capabilities as part of a Big Data solution.  This solution uses Pervasive to handle many aspects of big data ETL, integration, live data updates and predictive forecasting.  It also uses Infobright's Community Edition database for fast loading and retrieval of data.
