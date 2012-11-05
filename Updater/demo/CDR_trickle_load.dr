@@ -1,0 +1,346 @@
+{
+  "settings" : {
+    "name" : "CDR_trickle_load",
+    "relativePath" : "CDR_trickle_load"
+  },
+  "operators" : {
+    "reader" : {
+      "operator" : {
+        "@type" : "readDelimitedText",
+        "charset" : "UTF-8",
+        "fieldDelimiter" : "\"",
+        "fieldSeparator" : ",",
+        "lineComment" : "",
+        "schema" : {
+          "@type" : "TextRecord",
+          "defaults" : {
+            "nullIndicator" : "",
+            "stringHandling" : "NULLABLE_RAW"
+          },
+          "fieldTypes" : {
+            "field0" : {
+              "@type" : "JAVA_INT",
+              "nullIndicator" : ""
+            },
+            "field1" : {
+              "@type" : "JAVA_INT",
+              "nullIndicator" : ""
+            },
+            "customer_id" : {
+              "@type" : "JAVA_INT",
+              "nullIndicator" : ""
+            },
+            "vendor_id" : {
+              "@type" : "JAVA_INT",
+              "nullIndicator" : ""
+            },
+            "geo_id" : {
+              "@type" : "JAVA_INT",
+              "nullIndicator" : ""
+            },
+            "customer_release_code" : {
+              "@type" : "JAVA_INT",
+              "nullIndicator" : ""
+            },
+            "vend_release_code" : {
+              "@type" : "JAVA_INT",
+              "nullIndicator" : ""
+            },
+            "field7" : {
+              "@type" : "JAVA_INT",
+              "nullIndicator" : ""
+            },
+            "field8" : {
+              "@type" : "JAVA_INT",
+              "nullIndicator" : ""
+            },
+            "field9" : {
+              "@type" : "JAVA_INT",
+              "nullIndicator" : ""
+            },
+            "field10" : {
+              "@type" : "JAVA_INT",
+              "nullIndicator" : ""
+            },
+            "field11" : {
+              "@type" : "JAVA_INT",
+              "nullIndicator" : ""
+            },
+            "field12" : {
+              "@type" : "JAVA_INT",
+              "nullIndicator" : ""
+            },
+            "field13" : {
+              "@type" : "JAVA_INT",
+              "nullIndicator" : ""
+            },
+            "field14" : {
+              "@type" : "JAVA_DOUBLE",
+              "nullIndicator" : ""
+            },
+            "field15" : {
+              "@type" : "JAVA_INT",
+              "nullIndicator" : ""
+            },
+            "field16" : {
+              "@type" : "JAVA_INT",
+              "nullIndicator" : ""
+            },
+            "field17" : {
+              "@type" : "JAVA_INT",
+              "nullIndicator" : ""
+            }
+          }
+        },
+        "selectedFields" : [ "customer_id", "vendor_id", "geo_id", "customer_release_code", "vend_release_code", "field7", "field8", "field9", "field10", "field11", "field12", "field13", "field14", "field15", "field16", "field17" ],
+        "source" : {
+          "@type" : "GlobbingByteSource",
+          "pattern" : "C:\\tmp\\result1.txt"
+        }
+      }
+    },
+    "database" : {
+      "operator" : {
+        "@type" : "readFromJDBC",
+        "driverName" : "com.mysql.jdbc.Driver",
+        "outputType" : {
+          "type" : "record",
+          "representation" : "DENSE_BASE_NULL",
+          "fields" : [ {
+            "year" : {
+              "type" : "int"
+            }
+          }, {
+            "month" : {
+              "type" : "int"
+            }
+          }, {
+            "day" : {
+              "type" : "int"
+            }
+          }, {
+            "date_id" : {
+              "type" : "int"
+            }
+          } ]
+        },
+        "password" : "abc123",
+        "selectStatement" : "select year, month, day, date_id from date_dim",
+        "url" : "jdbc:mysql://pbd-database.englab.local:5029/cdr_dwh",
+        "user" : "root"
+      }
+    },
+    "Run Script" : {
+      "operator" : {
+        "@type" : "runScript",
+        "engineName" : "CompiledRhino",
+        "onEveryRecordScript" : "currtime = new Date();\n\nyear = currtime.getFullYear();\nmonth = currtime.getMonth() + 1;\nday = currtime.getUTCDate();\ntime_id = (currtime.getHours() * 3600 + currtime.getMinutes() * 60)/900;\n\n",
+        "outputType" : {
+          "type" : "record",
+          "representation" : "DENSE_BASE_NULL",
+          "fields" : [ {
+            "customer_id" : {
+              "type" : "int"
+            }
+          }, {
+            "vendor_id" : {
+              "type" : "int"
+            }
+          }, {
+            "geo_id" : {
+              "type" : "int"
+            }
+          }, {
+            "customer_release_code" : {
+              "type" : "int"
+            }
+          }, {
+            "vend_release_code" : {
+              "type" : "int"
+            }
+          }, {
+            "field7" : {
+              "type" : "int"
+            }
+          }, {
+            "field8" : {
+              "type" : "int"
+            }
+          }, {
+            "field9" : {
+              "type" : "int"
+            }
+          }, {
+            "field10" : {
+              "type" : "int"
+            }
+          }, {
+            "field11" : {
+              "type" : "int"
+            }
+          }, {
+            "field12" : {
+              "type" : "int"
+            }
+          }, {
+            "field13" : {
+              "type" : "int"
+            }
+          }, {
+            "field14" : {
+              "type" : "double"
+            }
+          }, {
+            "field15" : {
+              "type" : "int"
+            }
+          }, {
+            "field16" : {
+              "type" : "int"
+            }
+          }, {
+            "field17" : {
+              "type" : "int"
+            }
+          }, {
+            "year" : {
+              "type" : "int"
+            }
+          }, {
+            "month" : {
+              "type" : "int"
+            }
+          }, {
+            "day" : {
+              "type" : "int"
+            }
+          }, {
+            "time_id" : {
+              "type" : "int"
+            }
+          } ]
+        }
+      }
+    },
+    "Join" : {
+      "operator" : {
+        "@type" : "join",
+        "joinKeys" : [ {
+          "leftName" : "year",
+          "rightName" : "year"
+        }, {
+          "leftName" : "month",
+          "rightName" : "month"
+        }, {
+          "leftName" : "day",
+          "rightName" : "day"
+        } ],
+        "mergeLeftAndRightKeys" : true,
+        "useHashJoinHint" : true
+      }
+    },
+    "Select Fields" : {
+      "operator" : {
+        "@type" : "remapFields",
+        "fieldRemapping" : [ "RemapFields.reorder", {
+          "dropUnmappedFields" : true,
+          "directives" : [ {
+            "sourceName" : "date_id",
+            "targetName" : "date_id"
+          }, {
+            "sourceName" : "time_id",
+            "targetName" : "time_id"
+          }, {
+            "sourceName" : "year",
+            "targetName" : ""
+          }, {
+            "sourceName" : "month",
+            "targetName" : ""
+          }, {
+            "sourceName" : "day",
+            "targetName" : ""
+          }, {
+            "sourceName" : "customer_id",
+            "targetName" : "customer_id"
+          }, {
+            "sourceName" : "vendor_id",
+            "targetName" : "vendor_id"
+          }, {
+            "sourceName" : "geo_id",
+            "targetName" : "geo_id"
+          }, {
+            "sourceName" : "customer_release_code",
+            "targetName" : "customer_release_code"
+          }, {
+            "sourceName" : "vend_release_code",
+            "targetName" : "vend_release_code"
+          }, {
+            "sourceName" : "field7",
+            "targetName" : "field7"
+          }, {
+            "sourceName" : "field8",
+            "targetName" : "field8"
+          }, {
+            "sourceName" : "field9",
+            "targetName" : "field9"
+          }, {
+            "sourceName" : "field10",
+            "targetName" : "field10"
+          }, {
+            "sourceName" : "field11",
+            "targetName" : "field11"
+          }, {
+            "sourceName" : "field12",
+            "targetName" : "field12"
+          }, {
+            "sourceName" : "field13",
+            "targetName" : "field13"
+          }, {
+            "sourceName" : "field14",
+            "targetName" : "field14"
+          }, {
+            "sourceName" : "field15",
+            "targetName" : "field15"
+          }, {
+            "sourceName" : "field16",
+            "targetName" : "field16"
+          }, {
+            "sourceName" : "field17",
+            "targetName" : "field17"
+          } ]
+        } ],
+        "parallelismDisabled" : false
+      }
+    },
+    "writer" : {
+      "operator" : {
+        "@type" : "writeDelimitedText",
+        "charset" : "UTF-8",
+        "fieldDelimiter" : "",
+        "mode" : "OVERWRITE",
+        "recordSeparator" : "\n",
+        "target" : {
+          "@type" : "BasicByteSink",
+          "path" : "C:/tmp/result.txt"
+        },
+        "writeSingleSink" : true
+      }
+    }
+  },
+  "connections" : [ {
+    "from" : "CDR_trickle_load.reader.outputs.output",
+    "to" : "CDR_trickle_load.Run Script.inputs.input"
+  }, {
+    "from" : "CDR_trickle_load.database.outputs.output",
+    "to" : "CDR_trickle_load.Join.inputs.right"
+  }, {
+    "from" : "CDR_trickle_load.Run Script.outputs.output",
+    "to" : "CDR_trickle_load.Join.inputs.left"
+  }, {
+    "from" : "CDR_trickle_load.Join.outputs.output",
+    "to" : "CDR_trickle_load.Select Fields.inputs.input"
+  }, {
+    "from" : "CDR_trickle_load.Select Fields.outputs.output",
+    "to" : "CDR_trickle_load.writer.inputs.input"
+  } ]
+}

@@ -1,0 +1,591 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<report xmlns="http://www.eclipse.org/birt/2005/design" version="3.2.23" id="1">
+    <property name="createdBy">Eclipse BIRT Designer Version 3.7.2.v20120817-1705 Build &lt;3.7.2.v20120817-1705></property>
+    <property name="units">in</property>
+    <property name="iconFile">/templates/blank_report.gif</property>
+    <property name="bidiLayoutOrientation">ltr</property>
+    <property name="imageDPI">120</property>
+    <list-property name="libraries">
+        <structure>
+            <property name="fileName">Report Designs/MyThemes.rptlibrary</property>
+            <property name="namespace">MyThemes</property>
+        </structure>
+    </list-property>
+    <data-sources>
+        <oda-data-source extensionID="org.eclipse.birt.report.data.oda.jdbc" name="Data Source" id="7">
+            <list-property name="privateDriverProperties">
+                <ex-property>
+                    <name>metadataBidiFormatStr</name>
+                    <value>ILYNN</value>
+                </ex-property>
+                <ex-property>
+                    <name>disabledMetadataBidiFormatStr</name>
+                </ex-property>
+                <ex-property>
+                    <name>contentBidiFormatStr</name>
+                    <value>ILYNN</value>
+                </ex-property>
+                <ex-property>
+                    <name>disabledContentBidiFormatStr</name>
+                </ex-property>
+            </list-property>
+            <property name="odaDriverClass">com.mysql.jdbc.Driver</property>
+            <property name="odaURL">jdbc:mysql://localhost:5029/cdr</property>
+            <property name="odaUser">root</property>
+        </oda-data-source>
+    </data-sources>
+    <data-sets>
+        <oda-data-set extensionID="org.eclipse.birt.report.data.oda.jdbc.JdbcSelectDataSet" name="Geo Top Level Data Set" id="8">
+            <list-property name="columnHints">
+                <structure>
+                    <property name="columnName">avgLatitude</property>
+                    <property name="analysis">measure</property>
+                    <text-property name="displayName">avgLatitude</text-property>
+                    <text-property name="heading">avgLatitude</text-property>
+                </structure>
+                <structure>
+                    <property name="columnName">avgLongitude</property>
+                    <property name="analysis">measure</property>
+                    <text-property name="displayName">avgLongitude</text-property>
+                    <text-property name="heading">avgLongitude</text-property>
+                </structure>
+                <structure>
+                    <property name="columnName">country_name</property>
+                    <property name="analysis">dimension</property>
+                    <text-property name="displayName">country_name</text-property>
+                    <text-property name="heading">country_name</text-property>
+                </structure>
+                <structure>
+                    <property name="columnName">state</property>
+                    <property name="analysis">dimension</property>
+                    <text-property name="displayName">state</text-property>
+                    <text-property name="heading">state</text-property>
+                </structure>
+                <structure>
+                    <property name="columnName">attempts</property>
+                    <property name="analysis">measure</property>
+                    <text-property name="displayName">attempts</text-property>
+                    <text-property name="heading">attempts</text-property>
+                </structure>
+                <structure>
+                    <property name="columnName">connects</property>
+                    <property name="analysis">measure</property>
+                    <text-property name="displayName">connects</text-property>
+                    <text-property name="heading">connects</text-property>
+                </structure>
+                <structure>
+                    <property name="columnName">ASR</property>
+                    <property name="analysis">measure</property>
+                    <text-property name="displayName">ASR</text-property>
+                    <text-property name="heading">ASR</text-property>
+                </structure>
+            </list-property>
+            <list-property name="parameters"/>
+            <structure name="cachedMetaData">
+                <list-property name="resultSet">
+                    <structure>
+                        <property name="position">1</property>
+                        <property name="name">avgLatitude</property>
+                        <property name="dataType">float</property>
+                    </structure>
+                    <structure>
+                        <property name="position">2</property>
+                        <property name="name">avgLongitude</property>
+                        <property name="dataType">float</property>
+                    </structure>
+                    <structure>
+                        <property name="position">3</property>
+                        <property name="name">country_name</property>
+                        <property name="dataType">string</property>
+                    </structure>
+                    <structure>
+                        <property name="position">4</property>
+                        <property name="name">state</property>
+                        <property name="dataType">string</property>
+                    </structure>
+                    <structure>
+                        <property name="position">5</property>
+                        <property name="name">attempts</property>
+                        <property name="dataType">decimal</property>
+                    </structure>
+                    <structure>
+                        <property name="position">6</property>
+                        <property name="name">connects</property>
+                        <property name="dataType">decimal</property>
+                    </structure>
+                    <structure>
+                        <property name="position">7</property>
+                        <property name="name">ASR</property>
+                        <property name="dataType">decimal</property>
+                    </structure>
+                </list-property>
+            </structure>
+            <property name="dataSource">Data Source</property>
+            <list-property name="resultSet">
+                <structure>
+                    <property name="position">1</property>
+                    <property name="name">avgLatitude</property>
+                    <property name="nativeName">avgLatitude</property>
+                    <property name="dataType">float</property>
+                    <property name="nativeDataType">8</property>
+                </structure>
+                <structure>
+                    <property name="position">2</property>
+                    <property name="name">avgLongitude</property>
+                    <property name="nativeName">avgLongitude</property>
+                    <property name="dataType">float</property>
+                    <property name="nativeDataType">8</property>
+                </structure>
+                <structure>
+                    <property name="position">3</property>
+                    <property name="name">country_name</property>
+                    <property name="nativeName">country_name</property>
+                    <property name="dataType">string</property>
+                    <property name="nativeDataType">12</property>
+                </structure>
+                <structure>
+                    <property name="position">4</property>
+                    <property name="name">state</property>
+                    <property name="nativeName">state</property>
+                    <property name="dataType">string</property>
+                    <property name="nativeDataType">12</property>
+                </structure>
+                <structure>
+                    <property name="position">5</property>
+                    <property name="name">attempts</property>
+                    <property name="nativeName">attempts</property>
+                    <property name="dataType">decimal</property>
+                    <property name="nativeDataType">3</property>
+                </structure>
+                <structure>
+                    <property name="position">6</property>
+                    <property name="name">connects</property>
+                    <property name="nativeName">connects</property>
+                    <property name="dataType">decimal</property>
+                    <property name="nativeDataType">3</property>
+                </structure>
+                <structure>
+                    <property name="position">7</property>
+                    <property name="name">ASR</property>
+                    <property name="nativeName">ASR</property>
+                    <property name="dataType">decimal</property>
+                    <property name="nativeDataType">3</property>
+                </structure>
+            </list-property>
+            <xml-property name="queryText"><![CDATA[select
+    avg(g.latitude) as 'avgLatitude',
+    avg(g.longitude) as 'avgLongitude',
+    country_name,
+    state,
+    sum(grp_cnt) as 'attempts',
+    sum(connect_sum) as 'connects',
+    sum(connect_sum)/sum(grp_cnt) as 'ASR'
+from test_fact_agg f
+inner join geography_dim g on g.geo_id = f.geo_id
+inner join date_dim d on d.date_id = f.date_id
+inner join time_dim t on t.time_id = f.time_id
+where
+    d.date = curdate() and
+    t.time_window >=  subtime(curtime(), '00:30:00.0') and
+    t.time_window < curtime() and 
+    country_name = 'United States'
+group by
+    country_name,
+    state
+order by
+    sum(connect_sum)/sum(grp_cnt),
+    sum(grp_cnt) desc;]]></xml-property>
+            <xml-property name="designerValues"><![CDATA[<?xml version="1.0" encoding="UTF-8"?>
+<model:DesignValues xmlns:design="http://www.eclipse.org/datatools/connectivity/oda/design" xmlns:model="http://www.eclipse.org/birt/report/model/adapter/odaModel">
+  <Version>2.0</Version>
+  <design:ResultSets derivedMetaData="true">
+    <design:resultSetDefinitions>
+      <design:resultSetColumns>
+        <design:resultColumnDefinitions>
+          <design:attributes>
+            <design:identifier>
+              <design:name>avg(g.latitude)</design:name>
+              <design:position>1</design:position>
+            </design:identifier>
+            <design:nativeDataTypeCode>8</design:nativeDataTypeCode>
+            <design:precision>26</design:precision>
+            <design:scale>31</design:scale>
+            <design:nullability>Nullable</design:nullability>
+            <design:uiHints>
+              <design:displayName>avg(g.latitude)</design:displayName>
+            </design:uiHints>
+          </design:attributes>
+          <design:usageHints>
+            <design:label>avg(g.latitude)</design:label>
+            <design:formattingHints>
+              <design:displaySize>26</design:displaySize>
+            </design:formattingHints>
+          </design:usageHints>
+        </design:resultColumnDefinitions>
+        <design:resultColumnDefinitions>
+          <design:attributes>
+            <design:identifier>
+              <design:name>avg(g.longitude)</design:name>
+              <design:position>2</design:position>
+            </design:identifier>
+            <design:nativeDataTypeCode>8</design:nativeDataTypeCode>
+            <design:precision>26</design:precision>
+            <design:scale>31</design:scale>
+            <design:nullability>Nullable</design:nullability>
+            <design:uiHints>
+              <design:displayName>avg(g.longitude)</design:displayName>
+            </design:uiHints>
+          </design:attributes>
+          <design:usageHints>
+            <design:label>avg(g.longitude)</design:label>
+            <design:formattingHints>
+              <design:displaySize>26</design:displaySize>
+            </design:formattingHints>
+          </design:usageHints>
+        </design:resultColumnDefinitions>
+        <design:resultColumnDefinitions>
+          <design:attributes>
+            <design:identifier>
+              <design:name>country_name</design:name>
+              <design:position>3</design:position>
+            </design:identifier>
+            <design:nativeDataTypeCode>12</design:nativeDataTypeCode>
+            <design:precision>45</design:precision>
+            <design:scale>0</design:scale>
+            <design:nullability>Nullable</design:nullability>
+            <design:uiHints>
+              <design:displayName>country_name</design:displayName>
+            </design:uiHints>
+          </design:attributes>
+          <design:usageHints>
+            <design:label>country_name</design:label>
+            <design:formattingHints>
+              <design:displaySize>45</design:displaySize>
+            </design:formattingHints>
+          </design:usageHints>
+        </design:resultColumnDefinitions>
+        <design:resultColumnDefinitions>
+          <design:attributes>
+            <design:identifier>
+              <design:name>state</design:name>
+              <design:position>4</design:position>
+            </design:identifier>
+            <design:nativeDataTypeCode>12</design:nativeDataTypeCode>
+            <design:precision>2</design:precision>
+            <design:scale>0</design:scale>
+            <design:nullability>Nullable</design:nullability>
+            <design:uiHints>
+              <design:displayName>state</design:displayName>
+            </design:uiHints>
+          </design:attributes>
+          <design:usageHints>
+            <design:label>state</design:label>
+            <design:formattingHints>
+              <design:displaySize>2</design:displaySize>
+            </design:formattingHints>
+          </design:usageHints>
+        </design:resultColumnDefinitions>
+        <design:resultColumnDefinitions>
+          <design:attributes>
+            <design:identifier>
+              <design:name>attempts</design:name>
+              <design:position>5</design:position>
+            </design:identifier>
+            <design:nativeDataTypeCode>3</design:nativeDataTypeCode>
+            <design:precision>32</design:precision>
+            <design:scale>0</design:scale>
+            <design:nullability>Nullable</design:nullability>
+            <design:uiHints>
+              <design:displayName>attempts</design:displayName>
+            </design:uiHints>
+          </design:attributes>
+          <design:usageHints>
+            <design:label>attempts</design:label>
+            <design:formattingHints>
+              <design:displaySize>33</design:displaySize>
+            </design:formattingHints>
+          </design:usageHints>
+        </design:resultColumnDefinitions>
+        <design:resultColumnDefinitions>
+          <design:attributes>
+            <design:identifier>
+              <design:name>connects</design:name>
+              <design:position>6</design:position>
+            </design:identifier>
+            <design:nativeDataTypeCode>3</design:nativeDataTypeCode>
+            <design:precision>32</design:precision>
+            <design:scale>0</design:scale>
+            <design:nullability>Nullable</design:nullability>
+            <design:uiHints>
+              <design:displayName>connects</design:displayName>
+            </design:uiHints>
+          </design:attributes>
+          <design:usageHints>
+            <design:label>connects</design:label>
+            <design:formattingHints>
+              <design:displaySize>33</design:displaySize>
+            </design:formattingHints>
+          </design:usageHints>
+        </design:resultColumnDefinitions>
+        <design:resultColumnDefinitions>
+          <design:attributes>
+            <design:identifier>
+              <design:name>ASR</design:name>
+              <design:position>7</design:position>
+            </design:identifier>
+            <design:nativeDataTypeCode>3</design:nativeDataTypeCode>
+            <design:precision>36</design:precision>
+            <design:scale>4</design:scale>
+            <design:nullability>Nullable</design:nullability>
+            <design:uiHints>
+              <design:displayName>ASR</design:displayName>
+            </design:uiHints>
+          </design:attributes>
+          <design:usageHints>
+            <design:label>ASR</design:label>
+            <design:formattingHints>
+              <design:displaySize>38</design:displaySize>
+            </design:formattingHints>
+          </design:usageHints>
+        </design:resultColumnDefinitions>
+      </design:resultSetColumns>
+      <design:criteria/>
+    </design:resultSetDefinitions>
+  </design:ResultSets>
+</model:DesignValues>]]></xml-property>
+        </oda-data-set>
+    </data-sets>
+    <styles>
+        <style name="report" id="4">
+            <property name="fontFamily">sans-serif</property>
+            <property name="fontSize">10pt</property>
+        </style>
+        <style name="crosstab-cell" id="5">
+            <property name="borderBottomColor">#CCCCCC</property>
+            <property name="borderBottomStyle">solid</property>
+            <property name="borderBottomWidth">1pt</property>
+            <property name="borderLeftColor">#CCCCCC</property>
+            <property name="borderLeftStyle">solid</property>
+            <property name="borderLeftWidth">1pt</property>
+            <property name="borderRightColor">#CCCCCC</property>
+            <property name="borderRightStyle">solid</property>
+            <property name="borderRightWidth">1pt</property>
+            <property name="borderTopColor">#CCCCCC</property>
+            <property name="borderTopStyle">solid</property>
+            <property name="borderTopWidth">1pt</property>
+        </style>
+        <style name="crosstab" id="6">
+            <property name="borderBottomColor">#CCCCCC</property>
+            <property name="borderBottomStyle">solid</property>
+            <property name="borderBottomWidth">1pt</property>
+            <property name="borderLeftColor">#CCCCCC</property>
+            <property name="borderLeftStyle">solid</property>
+            <property name="borderLeftWidth">1pt</property>
+            <property name="borderRightColor">#CCCCCC</property>
+            <property name="borderRightStyle">solid</property>
+            <property name="borderRightWidth">1pt</property>
+            <property name="borderTopColor">#CCCCCC</property>
+            <property name="borderTopStyle">solid</property>
+            <property name="borderTopWidth">1pt</property>
+        </style>
+    </styles>
+    <page-setup>
+        <simple-master-page name="Simple MasterPage" id="2">
+            <page-footer>
+                <text id="3">
+                    <property name="contentType">html</property>
+                    <text-property name="content"><![CDATA[<value-of>new Date()</value-of>]]></text-property>
+                </text>
+            </page-footer>
+        </simple-master-page>
+    </page-setup>
+    <body>
+        <table id="59">
+            <property name="dataSet">Geo Top Level Data Set</property>
+            <property name="theme">MyThemes.default-tableBLU</property>
+            <list-property name="visibility">
+                <structure>
+                    <property name="format">all</property>
+                    <expression name="valueExpr" type="javascript">true</expression>
+                </structure>
+            </list-property>
+            <list-property name="boundDataColumns">
+                <structure>
+                    <property name="name">avgLatitude</property>
+                    <text-property name="displayName">avgLatitude</text-property>
+                    <expression name="expression" type="javascript">dataSetRow["avgLatitude"]</expression>
+                    <property name="dataType">float</property>
+                </structure>
+                <structure>
+                    <property name="name">avgLongitude</property>
+                    <text-property name="displayName">avgLongitude</text-property>
+                    <expression name="expression" type="javascript">dataSetRow["avgLongitude"]</expression>
+                    <property name="dataType">float</property>
+                </structure>
+                <structure>
+                    <property name="name">country_name</property>
+                    <text-property name="displayName">country_name</text-property>
+                    <expression name="expression" type="javascript">dataSetRow["country_name"]</expression>
+                    <property name="dataType">string</property>
+                </structure>
+                <structure>
+                    <property name="name">state</property>
+                    <text-property name="displayName">state</text-property>
+                    <expression name="expression" type="javascript">dataSetRow["state"]</expression>
+                    <property name="dataType">string</property>
+                </structure>
+                <structure>
+                    <property name="name">attempts</property>
+                    <text-property name="displayName">attempts</text-property>
+                    <expression name="expression" type="javascript">dataSetRow["attempts"]</expression>
+                    <property name="dataType">decimal</property>
+                </structure>
+                <structure>
+                    <property name="name">connects</property>
+                    <text-property name="displayName">connects</text-property>
+                    <expression name="expression" type="javascript">dataSetRow["connects"]</expression>
+                    <property name="dataType">decimal</property>
+                </structure>
+                <structure>
+                    <property name="name">ASR</property>
+                    <text-property name="displayName">ASR</text-property>
+                    <expression name="expression" type="javascript">dataSetRow["ASR"]</expression>
+                    <property name="dataType">decimal</property>
+                </structure>
+            </list-property>
+            <method name="onCreate"><![CDATA[vars["dataEntry"] = vars["dataEntry"] + "<entity id='" + this.getRowData().getColumnValue("state") + "' value='" + this.getRowData().getColumnValue("ASR")+ "' link='N-executereport.do?__executableName=/BigDataTelco/GeoAreaCode.rptdesign&amp;amp;invokeSubmit=true&amp;amp;__requesttype=immediate&amp;amp;pStateAbbr=" + this.getRowData().getColumnValue("state") + "' /> ";
+]]></method>
+            <column id="98"/>
+            <column id="99"/>
+            <column id="100"/>
+            <column id="101"/>
+            <column id="102"/>
+            <column id="103"/>
+            <column id="104"/>
+            <header>
+                <row id="60">
+                    <cell id="61">
+                        <label id="62">
+                            <text-property name="text">avgLatitude</text-property>
+                        </label>
+                    </cell>
+                    <cell id="63">
+                        <label id="64">
+                            <text-property name="text">avgLongitude</text-property>
+                        </label>
+                    </cell>
+                    <cell id="65">
+                        <label id="66">
+                            <text-property name="text">country_name</text-property>
+                        </label>
+                    </cell>
+                    <cell id="67">
+                        <label id="68">
+                            <text-property name="text">state</text-property>
+                        </label>
+                    </cell>
+                    <cell id="69">
+                        <label id="70">
+                            <text-property name="text">attempts</text-property>
+                        </label>
+                    </cell>
+                    <cell id="71">
+                        <label id="72">
+                            <text-property name="text">connects</text-property>
+                        </label>
+                    </cell>
+                    <cell id="73">
+                        <label id="74">
+                            <text-property name="text">ASR</text-property>
+                        </label>
+                    </cell>
+                </row>
+            </header>
+            <detail>
+                <row id="75">
+                    <method name="onCreate"><![CDATA[vars["dataEntry"] = vars["dataEntry"] + "<entity id='" + this.getRowData().getColumnValue("state") + "' value='" + this.getRowData().getColumnValue("ASR")+ "' link='N-executereport.do?__executableName=/BigDataTelco/GeoAreaCode.rptdesign&amp;amp;invokeSubmit=true&amp;amp;__requesttype=immediate&amp;amp;pStateAbbr=" + this.getRowData().getColumnValue("state") + "' /> ";
+]]></method>
+                    <cell id="76">
+                        <data id="77">
+                            <property name="resultSetColumn">avgLatitude</property>
+                        </data>
+                    </cell>
+                    <cell id="78">
+                        <data id="79">
+                            <property name="resultSetColumn">avgLongitude</property>
+                        </data>
+                    </cell>
+                    <cell id="80">
+                        <data id="81">
+                            <property name="resultSetColumn">country_name</property>
+                        </data>
+                    </cell>
+                    <cell id="82">
+                        <data id="83">
+                            <property name="resultSetColumn">state</property>
+                        </data>
+                    </cell>
+                    <cell id="84">
+                        <data id="85">
+                            <property name="resultSetColumn">attempts</property>
+                        </data>
+                    </cell>
+                    <cell id="86">
+                        <data id="87">
+                            <property name="resultSetColumn">connects</property>
+                        </data>
+                    </cell>
+                    <cell id="88">
+                        <data id="89">
+                            <property name="resultSetColumn">ASR</property>
+                        </data>
+                    </cell>
+                </row>
+            </detail>
+            <footer>
+                <row id="90">
+                    <cell id="91"/>
+                    <cell id="92"/>
+                    <cell id="93"/>
+                    <cell id="94"/>
+                    <cell id="95"/>
+                    <cell id="96"/>
+                    <cell id="97"/>
+                </row>
+            </footer>
+        </table>
+        <extended-item extensionName="GeneralFlash" id="58">
+            <property name="contentType">library</property>
+            <expression name="contentFile" type="constant">/resources/Flash Object Library/Flash Maps/FCMap_USA.swf</expression>
+            <property name="variables">
+                <variable-element name="dataXML">
+                    <expression name="value" type="javascript">"&lt;map showCanvasBorder='0' animation='0' showShadow='1' showBevel='1' showMarkerLabels='1' fillColor='F1f1f1' borderColor='000000' baseFont='Verdana' baseFontSize='10' markerBorderColor='000000' markerBgColor='FF5904' markerRadius='6' legendPosition='bottom' useHoverColor='1' hoverColor='CFE3FA' showMarkerToolTip='1' numberPrefix='' showLabels='0'>" +&#13;
+"	&lt;data>" +  vars["dataEntry"] + "&lt;/data>" +&#13;
+"	&lt;colorRange>" +&#13;
+"		&lt;color minValue='0' maxValue='.2099' displayValue='Way Below Goal' color='CC0001' />" +&#13;
+"		&lt;color minValue='.2100' maxValue='.3099' displayValue='Slightly Below Goal' color='FFCC33' />" +&#13;
+"		&lt;color minValue='.3100' maxValue='1' displayValue='Met Goal' color='069F06' />" +&#13;
+"	&lt;/colorRange>" + &#13;
+"	&lt;styles>" +&#13;
+"		&lt;definition>" +&#13;
+"			&lt;style type='animation' name='animX' param='_xscale' start='0' duration='1'/>" +&#13;
+"			&lt;style type='animation' name='animY' param='_yscale' start='0' duration='1'/>" +&#13;
+"		&lt;/definition>" +&#13;
+"		&lt;application>" +&#13;
+"			&lt;apply toObject='PLOT' styles='animX,animY'/>" +&#13;
+"		&lt;/application>" +&#13;
+"	&lt;/styles>" +&#13;
+"&lt;/map>";</expression>
+                </variable-element>
+            </property>
+            <property name="height">4.225in</property>
+            <property name="width">7.908333333333333in</property>
+        </extended-item>
+    </body>
+    <property name="pageVariables">
+        <variable-element name="dataEntry">
+            <expression name="value" type="javascript">""</expression>
+            <property name="type">report</property>
+        </variable-element>
+    </property>
+</report>
