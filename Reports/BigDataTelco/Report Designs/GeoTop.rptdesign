@@ -1,6 +1,6 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <report xmlns="http://www.eclipse.org/birt/2005/design" version="3.2.23" id="1">
-    <property name="createdBy">Eclipse BIRT Designer Version 3.7.2.v20120817-1705 Build &lt;3.7.2.v20120817-1705></property>
+    <property name="createdBy">Eclipse BIRT Designer Version 3.7.2.v20121022-1705 Build &lt;3.7.2.v20121022-1705></property>
     <property name="units">in</property>
     <property name="iconFile">/templates/blank_report.gif</property>
     <property name="bidiLayoutOrientation">ltr</property>
@@ -391,6 +391,7 @@ order by
     </styles>
     <page-setup>
         <simple-master-page name="Simple MasterPage" id="2">
+            <property name="orientation">landscape</property>
             <page-footer>
                 <text id="3">
                     <property name="contentType">html</property>
@@ -503,7 +504,7 @@ order by
             </header>
             <detail>
                 <row id="75">
-                    <method name="onCreate"><![CDATA[vars["dataEntry"] = vars["dataEntry"] + "<entity id='" + this.getRowData().getColumnValue("state") + "' value='" + this.getRowData().getColumnValue("ASR")+ "' link='N-executereport.do?__executableName=/BigDataTelco/GeoAreaCode.rptdesign&amp;amp;invokeSubmit=true&amp;amp;__requesttype=immediate&amp;amp;pStateAbbr=" + this.getRowData().getColumnValue("state") + "' /> ";
+                    <method name="onCreate"><![CDATA[vars["dataEntry"] = vars["dataEntry"] + "<entity id='" + this.getRowData().getColumnValue("state") + "' value='" + this.getRowData().getColumnValue("ASR")+ "' link='N-executereport.do?__executableName=/BigDataTelco/GeoAreaCode.rptdesign&amp;amp;invokeSubmit=true&amp;amp;__requesttype=immediate&amp;amp;pStateAbbr=" + this.getRowData().getColumnValue("state") + "&amp;amp;__vp=ScorecardVolume' /> ";
 ]]></method>
                     <cell id="76">
                         <data id="77">
@@ -562,9 +563,9 @@ order by
                     <expression name="value" type="javascript">"&lt;map showCanvasBorder='0' animation='0' showShadow='1' showBevel='1' showMarkerLabels='1' fillColor='F1f1f1' borderColor='000000' baseFont='Verdana' baseFontSize='10' markerBorderColor='000000' markerBgColor='FF5904' markerRadius='6' legendPosition='bottom' useHoverColor='1' hoverColor='CFE3FA' showMarkerToolTip='1' numberPrefix='' showLabels='0'>" +&#13;
 "	&lt;data>" +  vars["dataEntry"] + "&lt;/data>" +&#13;
 "	&lt;colorRange>" +&#13;
-"		&lt;color minValue='0' maxValue='.2099' displayValue='Way Below Goal' color='CC0001' />" +&#13;
-"		&lt;color minValue='.2100' maxValue='.3099' displayValue='Slightly Below Goal' color='FFCC33' />" +&#13;
-"		&lt;color minValue='.3100' maxValue='1' displayValue='Met Goal' color='069F06' />" +&#13;
+"		&lt;color minValue='0' maxValue='.2099' displayValue='Below Goal' color='CC0001' />" +&#13;
+"		&lt;color minValue='.2100' maxValue='.3499' displayValue='Goal' color='FFCC33' />" +&#13;
+"		&lt;color minValue='.3500' maxValue='1' displayValue='Above Goal' color='069F06' />" +&#13;
 "	&lt;/colorRange>" + &#13;
 "	&lt;styles>" +&#13;
 "		&lt;definition>" +&#13;
@@ -578,9 +579,612 @@ order by
 "&lt;/map>";</expression>
                 </variable-element>
             </property>
-            <property name="height">4.225in</property>
-            <property name="width">7.908333333333333in</property>
+            <expression name="bookmark" type="javascript">"map"</expression>
+            <property name="height">4.427083333333333in</property>
+            <property name="width">8.21875in</property>
         </extended-item>
+        <grid id="109">
+            <property name="width">4in</property>
+            <expression name="bookmark" type="javascript">"sparcline"</expression>
+            <column id="110"/>
+            <row id="111">
+                <cell id="112">
+                    <label id="108">
+                        <property name="fontFamily">"Verdana"</property>
+                        <property name="fontSize">8pt</property>
+                        <property name="color">#666666</property>
+                        <property name="paddingLeft">1pt</property>
+                        <property name="textAlign">center</property>
+                        <text-property name="text">Attempts</text-property>
+                    </label>
+                    <extended-item extensionName="FlashGadgets" id="105">
+                        <xml-property name="xmlRepresentation"><![CDATA[<ActuateChart version="1.0">
+ <Gadget backgroundColor="FEFEFE" borderColor="000000" borderThickness="2" borderTransparency="255" colorScheme="1" prefix="" showBorder="false" showGaugeLabels="false" showValueAboveNeedle="false" subTitle="" subType="" suffix="" title="" turnOffAnimation="false" turnOffDefaultAnimination="false" type="Spark" version="1.0.0">
+  <gadgetPartsSupportingEffects _body="background"/>
+  <gadgetPartsSupportingEffects _body="caption"/>
+  <gadgetPartsSupportingEffects _body="subcaption"/>
+  <gadgetPartsSupportingEffects _body="plot"/>
+  <gadgetPartsSupportingEffects _body="anchors"/>
+  <gadgetPartsSupportingEffects _body="openvalue"/>
+  <gadgetPartsSupportingEffects _body="closevalue"/>
+  <gadgetPartsSupportingEffects _body="highlowvalue"/>
+  <gadgetPartsSupportingEffects _body="trendlines"/>
+  <gadgetPartsSupportingEffects _body="tooltip"/>
+  <scale autoAdjustMajorTickMarks="true" majorTickMarksCount="5" max="100" min="0" minorTickMarksCount="4"/>
+  <region endValue="35.0" label="A" startValue="0.0"/>
+  <region endValue="70.0" label="B" startValue="35.0"/>
+  <region endValue="100.0" label="C" startValue="70.0"/>
+  <thresholds isDashed="false" isTrendZone="false" length="40" lineWidth="4" markerRadius="4" showMarker="false" showValueOnTop="true" transparency="255"/>
+  <ticks maxLabel="" minLabel="" placeTicksInside="false" placeValuesInside="false" showLimits="true" showTickMarks="true" showTickValues="true" ticksBelowGauge="true" ticksOnRight="false">
+   <major height="8" width="1"/>
+   <minor height="3" width="1"/>
+  </ticks>
+  <toolTip showToolTip="true"/>
+  <effects>
+   <object _body="plot"/>
+   <action name="My Effect 0">
+    <animation attribute="0" duration="1" enabled="true" pattern="3" start="$chartStartX"/>
+    <bevel angle="120" distance="50.0" horizontalBlur="10" shadowColor="0000fe" shadowTransparency="255" verticalBlur="10"/>
+    <blur horizontalBlur="5" verticalBlur="0"/>
+    <glow color="fecc00" horizontalBlur="10" transparency="255" verticalBlur="10"/>
+    <shadow angle="50" color="333333" horizontalBlur="5" offsetDistance="10" transparency="255" verticalBlur="5"/>
+   </action>
+  </effects>
+  <valueDefinition query="row[&quot;attempts&quot;]"/>
+  <linearGauge showNeedleAbove="false" showNeedleValue="true" showRoundCorners="true">
+   <needle borderColor="000000" borderTransparency="255" borderWidth="1" fillColor="000000" fillTransparency="255" shape="0" size="10" tooltipShowValue="true"/>
+  </linearGauge>
+  <spark connectMissingData="false">
+   <anchor shape="3" showCloseAnchor="true" showHighAnchor="true" showLowAnchor="true" showOpenAnchor="true" showOtherAnchors="false" size="4"/>
+   <sparkPlot lineTransparency="255" lineWidth="2" showCloseValue="true" showHighLowValue="true" showOpenValue="true"/>
+  </spark>
+ </Gadget>
+</ActuateChart>
+]]></xml-property>
+                        <property name="inheritColumns">false</property>
+                        <property name="dataSet">Geo Top Level Data Set</property>
+                        <property name="height">0.7604166666666666in</property>
+                        <property name="width">4in</property>
+                        <list-property name="boundDataColumns">
+                            <structure>
+                                <property name="name">avgLatitude</property>
+                                <expression name="expression" type="javascript">dataSetRow["avgLatitude"]</expression>
+                                <property name="dataType">float</property>
+                            </structure>
+                            <structure>
+                                <property name="name">avgLongitude</property>
+                                <expression name="expression" type="javascript">dataSetRow["avgLongitude"]</expression>
+                                <property name="dataType">float</property>
+                            </structure>
+                            <structure>
+                                <property name="name">country_name</property>
+                                <expression name="expression" type="javascript">dataSetRow["country_name"]</expression>
+                                <property name="dataType">string</property>
+                            </structure>
+                            <structure>
+                                <property name="name">state</property>
+                                <expression name="expression" type="javascript">dataSetRow["state"]</expression>
+                                <property name="dataType">string</property>
+                            </structure>
+                            <structure>
+                                <property name="name">attempts</property>
+                                <expression name="expression" type="javascript">dataSetRow["attempts"]</expression>
+                                <property name="dataType">decimal</property>
+                            </structure>
+                            <structure>
+                                <property name="name">connects</property>
+                                <expression name="expression" type="javascript">dataSetRow["connects"]</expression>
+                                <property name="dataType">decimal</property>
+                            </structure>
+                            <structure>
+                                <property name="name">ASR</property>
+                                <expression name="expression" type="javascript">dataSetRow["ASR"]</expression>
+                                <property name="dataType">decimal</property>
+                            </structure>
+                        </list-property>
+                    </extended-item>
+                    <label id="113">
+                        <property name="fontFamily">"Verdana"</property>
+                        <property name="fontSize">8pt</property>
+                        <property name="color">#666666</property>
+                        <property name="paddingTop">15pt</property>
+                        <property name="paddingLeft">1pt</property>
+                        <property name="textAlign">center</property>
+                        <text-property name="text">Connects</text-property>
+                    </label>
+                    <extended-item extensionName="FlashGadgets" id="115">
+                        <xml-property name="xmlRepresentation"><![CDATA[<ActuateChart version="1.0">
+ <Gadget backgroundColor="FEFEFE" borderColor="000000" borderThickness="2" borderTransparency="255" colorScheme="1" prefix="" showBorder="false" showGaugeLabels="false" showValueAboveNeedle="false" subTitle="" subType="" suffix="" title="" turnOffAnimation="false" turnOffDefaultAnimination="false" type="Spark" version="1.0.0">
+  <gadgetPartsSupportingEffects _body="background"/>
+  <gadgetPartsSupportingEffects _body="caption"/>
+  <gadgetPartsSupportingEffects _body="subcaption"/>
+  <gadgetPartsSupportingEffects _body="plot"/>
+  <gadgetPartsSupportingEffects _body="anchors"/>
+  <gadgetPartsSupportingEffects _body="openvalue"/>
+  <gadgetPartsSupportingEffects _body="closevalue"/>
+  <gadgetPartsSupportingEffects _body="highlowvalue"/>
+  <gadgetPartsSupportingEffects _body="trendlines"/>
+  <gadgetPartsSupportingEffects _body="tooltip"/>
+  <scale autoAdjustMajorTickMarks="true" majorTickMarksCount="5" max="100" min="0" minorTickMarksCount="4"/>
+  <region endValue="35.0" label="A" startValue="0.0"/>
+  <region endValue="70.0" label="B" startValue="35.0"/>
+  <region endValue="100.0" label="C" startValue="70.0"/>
+  <thresholds isDashed="false" isTrendZone="false" length="40" lineWidth="4" markerRadius="4" showMarker="false" showValueOnTop="true" transparency="255"/>
+  <ticks maxLabel="" minLabel="" placeTicksInside="false" placeValuesInside="false" showLimits="true" showTickMarks="true" showTickValues="true" ticksBelowGauge="true" ticksOnRight="false">
+   <major height="8" width="1"/>
+   <minor height="3" width="1"/>
+  </ticks>
+  <toolTip showToolTip="true"/>
+  <effects>
+   <object _body="plot"/>
+   <action name="My Effect 0">
+    <animation attribute="0" duration="1" enabled="true" pattern="3" start="$chartStartX"/>
+    <bevel angle="120" distance="50.0" horizontalBlur="10" shadowColor="0000fe" shadowTransparency="255" verticalBlur="10"/>
+    <blur horizontalBlur="5" verticalBlur="0"/>
+    <glow color="fecc00" horizontalBlur="10" transparency="255" verticalBlur="10"/>
+    <shadow angle="50" color="333333" horizontalBlur="5" offsetDistance="10" transparency="255" verticalBlur="5"/>
+   </action>
+  </effects>
+  <valueDefinition query="row[&quot;connects&quot;]"/>
+  <linearGauge showNeedleAbove="false" showNeedleValue="true" showRoundCorners="true">
+   <needle borderColor="000000" borderTransparency="255" borderWidth="1" fillColor="000000" fillTransparency="255" shape="0" size="10" tooltipShowValue="true"/>
+  </linearGauge>
+  <spark connectMissingData="false">
+   <anchor shape="3" showCloseAnchor="true" showHighAnchor="true" showLowAnchor="true" showOpenAnchor="true" showOtherAnchors="false" size="4"/>
+   <sparkPlot lineTransparency="255" lineWidth="2" showCloseValue="true" showHighLowValue="true" showOpenValue="true"/>
+  </spark>
+ </Gadget>
+</ActuateChart>
+]]></xml-property>
+                        <property name="inheritColumns">false</property>
+                        <property name="dataSet">Geo Top Level Data Set</property>
+                        <property name="height">0.7604166666666666in</property>
+                        <property name="width">4in</property>
+                        <list-property name="boundDataColumns">
+                            <structure>
+                                <property name="name">avgLatitude</property>
+                                <expression name="expression" type="javascript">dataSetRow["avgLatitude"]</expression>
+                                <property name="dataType">float</property>
+                            </structure>
+                            <structure>
+                                <property name="name">avgLongitude</property>
+                                <expression name="expression" type="javascript">dataSetRow["avgLongitude"]</expression>
+                                <property name="dataType">float</property>
+                            </structure>
+                            <structure>
+                                <property name="name">country_name</property>
+                                <expression name="expression" type="javascript">dataSetRow["country_name"]</expression>
+                                <property name="dataType">string</property>
+                            </structure>
+                            <structure>
+                                <property name="name">state</property>
+                                <expression name="expression" type="javascript">dataSetRow["state"]</expression>
+                                <property name="dataType">string</property>
+                            </structure>
+                            <structure>
+                                <property name="name">attempts</property>
+                                <expression name="expression" type="javascript">dataSetRow["attempts"]</expression>
+                                <property name="dataType">decimal</property>
+                            </structure>
+                            <structure>
+                                <property name="name">connects</property>
+                                <expression name="expression" type="javascript">dataSetRow["connects"]</expression>
+                                <property name="dataType">decimal</property>
+                            </structure>
+                            <structure>
+                                <property name="name">ASR</property>
+                                <expression name="expression" type="javascript">dataSetRow["ASR"]</expression>
+                                <property name="dataType">decimal</property>
+                            </structure>
+                        </list-property>
+                    </extended-item>
+                    <label id="114">
+                        <property name="fontFamily">"Verdana"</property>
+                        <property name="fontSize">8pt</property>
+                        <property name="color">#666666</property>
+                        <property name="paddingTop">15pt</property>
+                        <property name="paddingLeft">1pt</property>
+                        <property name="textAlign">center</property>
+                        <text-property name="text">ASR</text-property>
+                    </label>
+                    <extended-item extensionName="FlashGadgets" id="107">
+                        <xml-property name="xmlRepresentation"><![CDATA[<ActuateChart version="1.0">
+ <Gadget backgroundColor="FEFEFE" borderColor="000000" borderThickness="2" borderTransparency="255" colorScheme="1" showBorder="false" showGaugeLabels="false" showValueAboveNeedle="false" subTitle="" subType="" title="" turnOffAnimation="false" turnOffDefaultAnimination="false" type="Spark" version="1.0.0">
+  <gadgetPartsSupportingEffects _body="background"/>
+  <gadgetPartsSupportingEffects _body="caption"/>
+  <gadgetPartsSupportingEffects _body="subcaption"/>
+  <gadgetPartsSupportingEffects _body="plot"/>
+  <gadgetPartsSupportingEffects _body="anchors"/>
+  <gadgetPartsSupportingEffects _body="openvalue"/>
+  <gadgetPartsSupportingEffects _body="closevalue"/>
+  <gadgetPartsSupportingEffects _body="highlowvalue"/>
+  <gadgetPartsSupportingEffects _body="trendlines"/>
+  <gadgetPartsSupportingEffects _body="tooltip"/>
+  <scale autoAdjustMajorTickMarks="true" majorTickMarksCount="5" max="0.3" min="0.06" minorTickMarksCount="4"/>
+  <region endValue="35.0" label="A" startValue="0.0"/>
+  <region endValue="70.0" label="B" startValue="35.0"/>
+  <region endValue="100.0" label="C" startValue="70.0"/>
+  <thresholds isDashed="false" isTrendZone="false" length="40" lineWidth="4" markerRadius="4" showMarker="false" showValueOnTop="true" transparency="255"/>
+  <ticks maxLabel="" minLabel="" placeTicksInside="false" placeValuesInside="false" showLimits="true" showTickMarks="true" showTickValues="true" ticksBelowGauge="true" ticksOnRight="false">
+   <major height="8" width="1"/>
+   <minor height="3" width="1"/>
+  </ticks>
+  <toolTip showToolTip="true"/>
+  <effects>
+   <object _body="plot"/>
+   <action name="My Effect 0">
+    <animation attribute="0" duration="1" enabled="true" pattern="3" start="$chartStartX"/>
+    <bevel angle="120" distance="50.0" horizontalBlur="10" shadowColor="0000fe" shadowTransparency="255" verticalBlur="10"/>
+    <blur horizontalBlur="5" verticalBlur="0"/>
+    <glow color="fecc00" horizontalBlur="10" transparency="255" verticalBlur="10"/>
+    <shadow angle="50" color="333333" horizontalBlur="5" offsetDistance="10" transparency="255" verticalBlur="5"/>
+   </action>
+  </effects>
+  <valueDefinition query="row[&quot;ASR&quot;]"/>
+  <linearGauge showNeedleAbove="false" showNeedleValue="true" showRoundCorners="true">
+   <needle borderColor="000000" borderTransparency="255" borderWidth="1" fillColor="000000" fillTransparency="255" shape="0" size="10" tooltipShowValue="true"/>
+  </linearGauge>
+  <spark connectMissingData="false">
+   <anchor shape="3" showCloseAnchor="true" showHighAnchor="true" showLowAnchor="true" showOpenAnchor="true" showOtherAnchors="false" size="4"/>
+   <sparkPlot lineTransparency="255" lineWidth="2" showCloseValue="true" showHighLowValue="true" showOpenValue="true"/>
+  </spark>
+ </Gadget>
+</ActuateChart>
+]]></xml-property>
+                        <property name="inheritColumns">false</property>
+                        <property name="dataSet">Geo Top Level Data Set</property>
+                        <property name="height">0.7604166666666666in</property>
+                        <property name="width">4in</property>
+                        <list-property name="boundDataColumns">
+                            <structure>
+                                <property name="name">avgLatitude</property>
+                                <expression name="expression" type="javascript">dataSetRow["avgLatitude"]</expression>
+                                <property name="dataType">float</property>
+                            </structure>
+                            <structure>
+                                <property name="name">avgLongitude</property>
+                                <expression name="expression" type="javascript">dataSetRow["avgLongitude"]</expression>
+                                <property name="dataType">float</property>
+                            </structure>
+                            <structure>
+                                <property name="name">country_name</property>
+                                <expression name="expression" type="javascript">dataSetRow["country_name"]</expression>
+                                <property name="dataType">string</property>
+                            </structure>
+                            <structure>
+                                <property name="name">state</property>
+                                <expression name="expression" type="javascript">dataSetRow["state"]</expression>
+                                <property name="dataType">string</property>
+                            </structure>
+                            <structure>
+                                <property name="name">attempts</property>
+                                <expression name="expression" type="javascript">dataSetRow["attempts"]</expression>
+                                <property name="dataType">decimal</property>
+                            </structure>
+                            <structure>
+                                <property name="name">connects</property>
+                                <expression name="expression" type="javascript">dataSetRow["connects"]</expression>
+                                <property name="dataType">decimal</property>
+                            </structure>
+                            <structure>
+                                <property name="name">ASR</property>
+                                <expression name="expression" type="javascript">dataSetRow["ASR"]</expression>
+                                <property name="dataType">decimal</property>
+                            </structure>
+                        </list-property>
+                    </extended-item>
+                </cell>
+            </row>
+        </grid>
+        <extended-item extensionName="FlashGadgets" id="119">
+            <xml-property name="xmlRepresentation"><![CDATA[<ActuateChart version="1.0">
+ <Gadget backgroundColor="FEFEFE" borderColor="000000" borderThickness="2" borderTransparency="255" colorScheme="1" prefix="" showBorder="false" showGaugeLabels="false" showValueAboveNeedle="false" subType="" suffix="" turnOffAnimation="false" turnOffDefaultAnimination="false" type="Meter" version="1.0.0">
+  <gadgetPartsSupportingEffects _body="background"/>
+  <gadgetPartsSupportingEffects _body="dial"/>
+  <gadgetPartsSupportingEffects _body="gauge"/>
+  <gadgetPartsSupportingEffects _body="pivot"/>
+  <gadgetPartsSupportingEffects _body="value"/>
+  <gadgetPartsSupportingEffects _body="tickmarks"/>
+  <gadgetPartsSupportingEffects _body="tickvalues"/>
+  <gadgetPartsSupportingEffects _body="limitvalues"/>
+  <gadgetPartsSupportingEffects _body="trendpoints"/>
+  <gadgetPartsSupportingEffects _body="trendvalues"/>
+  <gadgetPartsSupportingEffects _body="trendmarkers"/>
+  <gadgetPartsSupportingEffects _body="tooltip"/>
+  <scale autoAdjustMajorTickMarks="true" majorTickMarksCount="5" max="30000" min="0" minorTickMarksCount="4"/>
+  <region color="cc0001" endValue="7500.0" label="A" startValue="0.0" transparency="255"/>
+  <region color="ffcc33" endValue="20000.0" label="B" startValue="7500.0" transparency="255"/>
+  <region color="069f06" endValue="30000.0" label="C" startValue="20000.0" transparency="255"/>
+  <thresholds isDashed="false" isTrendZone="false" length="40" lineWidth="4" markerRadius="4" showMarker="false" showValueOnTop="true" transparency="255"/>
+  <ticks maxLabel="" minLabel="" placeTicksInside="false" placeValuesInside="false" showLimits="true" showTickMarks="true" showTickValues="true" ticksBelowGauge="true" ticksOnRight="false">
+   <major height="10" width="1"/>
+   <minor height="5" width="1"/>
+  </ticks>
+  <toolTip showToolTip="true"/>
+  <valueDefinition query="row[&quot;connects&quot;]"/>
+  <linearGauge showNeedleAbove="false" showNeedleValue="true" showRoundCorners="true">
+   <needle borderColor="000000" borderTransparency="255" borderWidth="1" fillColor="000000" fillTransparency="255" shape="0" size="10" tooltipShowValue="true"/>
+  </linearGauge>
+  <meter centerX="50" centerY="85" endAngle="0" innerRadius="10" outerRadius="83" showDialValue="true" showValueAboveNeedle="true" startAngle="180">
+   <needles baseWidth="7" rearExtension="10" showValue="true" size="65" topWidth="0"/>
+   <needleBasePivot borderColor="000000" borderThickness="1" borderTransparency="80" fillColor="808080" showBorder="true" size="2" useGradient="false">
+    <gradient angle="0" endColor="00ff00" pattern="1" startColor="ff0000"/>
+   </needleBasePivot>
+  </meter>
+  <font size="10"/>
+ </Gadget>
+</ActuateChart>
+]]></xml-property>
+            <property name="inheritColumns">false</property>
+            <expression name="bookmark" type="javascript">"connectsmeter"</expression>
+            <property name="dataSet">Geo Top Level Data Set</property>
+            <property name="height">1.71875in</property>
+            <property name="width">3.6770833333333335in</property>
+            <list-property name="boundDataColumns">
+                <structure>
+                    <property name="name">avgLatitude</property>
+                    <expression name="expression" type="javascript">dataSetRow["avgLatitude"]</expression>
+                    <property name="dataType">float</property>
+                </structure>
+                <structure>
+                    <property name="name">avgLongitude</property>
+                    <expression name="expression" type="javascript">dataSetRow["avgLongitude"]</expression>
+                    <property name="dataType">float</property>
+                </structure>
+                <structure>
+                    <property name="name">country_name</property>
+                    <expression name="expression" type="javascript">dataSetRow["country_name"]</expression>
+                    <property name="dataType">string</property>
+                </structure>
+                <structure>
+                    <property name="name">state</property>
+                    <expression name="expression" type="javascript">dataSetRow["state"]</expression>
+                    <property name="dataType">string</property>
+                </structure>
+                <structure>
+                    <property name="name">attempts</property>
+                    <expression name="expression" type="javascript">dataSetRow["attempts"]</expression>
+                    <property name="dataType">decimal</property>
+                </structure>
+                <structure>
+                    <property name="name">connects</property>
+                    <expression name="expression" type="javascript">dataSetRow["connects"]</expression>
+                    <property name="dataType">decimal</property>
+                </structure>
+                <structure>
+                    <property name="name">ASR</property>
+                    <expression name="expression" type="javascript">dataSetRow["ASR"]</expression>
+                    <property name="dataType">decimal</property>
+                </structure>
+            </list-property>
+        </extended-item>
+        <extended-item extensionName="FlashGadgets" id="120">
+            <xml-property name="xmlRepresentation"><![CDATA[<ActuateChart version="1.0">
+ <Gadget backgroundColor="FEFEFE" borderColor="000000" borderThickness="2" borderTransparency="255" colorScheme="1" showBorder="false" showGaugeLabels="false" showValueAboveNeedle="false" subType="" turnOffAnimation="false" turnOffDefaultAnimination="false" type="Meter" version="1.0.0">
+  <gadgetPartsSupportingEffects _body="background"/>
+  <gadgetPartsSupportingEffects _body="dial"/>
+  <gadgetPartsSupportingEffects _body="gauge"/>
+  <gadgetPartsSupportingEffects _body="pivot"/>
+  <gadgetPartsSupportingEffects _body="value"/>
+  <gadgetPartsSupportingEffects _body="tickmarks"/>
+  <gadgetPartsSupportingEffects _body="tickvalues"/>
+  <gadgetPartsSupportingEffects _body="limitvalues"/>
+  <gadgetPartsSupportingEffects _body="trendpoints"/>
+  <gadgetPartsSupportingEffects _body="trendvalues"/>
+  <gadgetPartsSupportingEffects _body="trendmarkers"/>
+  <gadgetPartsSupportingEffects _body="tooltip"/>
+  <scale autoAdjustMajorTickMarks="true" majorTickMarksCount="5" max="300000" min="0" minorTickMarksCount="4"/>
+  <region color="cc0001" endValue="75000.0" label="A" startValue="0.0" transparency="255"/>
+  <region color="ffcc33" endValue="200000.0" label="B" startValue="75000.0" transparency="255"/>
+  <region color="069f06" endValue="300000.0" label="C" startValue="200000.0" transparency="255"/>
+  <thresholds isDashed="false" isTrendZone="false" length="40" lineWidth="4" markerRadius="4" showMarker="false" showValueOnTop="true" transparency="255"/>
+  <ticks maxLabel="" minLabel="" placeTicksInside="false" placeValuesInside="false" showLimits="true" showTickMarks="true" showTickValues="true" ticksBelowGauge="true" ticksOnRight="false">
+   <major height="8" width="1"/>
+   <minor height="3" width="1"/>
+  </ticks>
+  <toolTip showToolTip="true"/>
+  <valueDefinition query="row[&quot;attempts&quot;]"/>
+  <linearGauge showNeedleAbove="false" showNeedleValue="true" showRoundCorners="true">
+   <needle borderColor="000000" borderTransparency="255" borderWidth="1" fillColor="000000" fillTransparency="255" shape="0" size="10" tooltipShowValue="true"/>
+  </linearGauge>
+  <meter centerX="50" centerY="85" endAngle="0" innerRadius="10" outerRadius="83" showDialValue="true" showValueAboveNeedle="true" startAngle="180">
+   <needles baseWidth="7" rearExtension="10" showValue="true" size="65" topWidth="0"/>
+   <needleBasePivot borderColor="000000" borderThickness="1" borderTransparency="80" fillColor="808080" showBorder="true" size="2" useGradient="false">
+    <gradient angle="0" endColor="00ff00" pattern="1" startColor="ff0000"/>
+   </needleBasePivot>
+  </meter>
+  <font size="10"/>
+ </Gadget>
+</ActuateChart>
+]]></xml-property>
+            <property name="inheritColumns">false</property>
+            <expression name="bookmark" type="javascript">"attemptsmeter"</expression>
+            <property name="dataSet">Geo Top Level Data Set</property>
+            <property name="height">1.71875in</property>
+            <property name="width">3.6770833333333335in</property>
+            <list-property name="boundDataColumns">
+                <structure>
+                    <property name="name">avgLatitude</property>
+                    <expression name="expression" type="javascript">dataSetRow["avgLatitude"]</expression>
+                    <property name="dataType">float</property>
+                </structure>
+                <structure>
+                    <property name="name">avgLongitude</property>
+                    <expression name="expression" type="javascript">dataSetRow["avgLongitude"]</expression>
+                    <property name="dataType">float</property>
+                </structure>
+                <structure>
+                    <property name="name">country_name</property>
+                    <expression name="expression" type="javascript">dataSetRow["country_name"]</expression>
+                    <property name="dataType">string</property>
+                </structure>
+                <structure>
+                    <property name="name">state</property>
+                    <expression name="expression" type="javascript">dataSetRow["state"]</expression>
+                    <property name="dataType">string</property>
+                </structure>
+                <structure>
+                    <property name="name">attempts</property>
+                    <expression name="expression" type="javascript">dataSetRow["attempts"]</expression>
+                    <property name="dataType">decimal</property>
+                </structure>
+                <structure>
+                    <property name="name">connects</property>
+                    <expression name="expression" type="javascript">dataSetRow["connects"]</expression>
+                    <property name="dataType">decimal</property>
+                </structure>
+                <structure>
+                    <property name="name">ASR</property>
+                    <expression name="expression" type="javascript">dataSetRow["ASR"]</expression>
+                    <property name="dataType">decimal</property>
+                </structure>
+            </list-property>
+        </extended-item>
+        <table id="122">
+            <property name="width">2in</property>
+            <property name="dataSet">Geo Top Level Data Set</property>
+            <property name="theme">MyThemes.default-tableBLU</property>
+            <list-property name="boundDataColumns">
+                <structure>
+                    <property name="name">avgLatitude</property>
+                    <text-property name="displayName">avgLatitude</text-property>
+                    <expression name="expression" type="javascript">dataSetRow["avgLatitude"]</expression>
+                    <property name="dataType">float</property>
+                </structure>
+                <structure>
+                    <property name="name">avgLongitude</property>
+                    <text-property name="displayName">avgLongitude</text-property>
+                    <expression name="expression" type="javascript">dataSetRow["avgLongitude"]</expression>
+                    <property name="dataType">float</property>
+                </structure>
+                <structure>
+                    <property name="name">country_name</property>
+                    <text-property name="displayName">country_name</text-property>
+                    <expression name="expression" type="javascript">dataSetRow["country_name"]</expression>
+                    <property name="dataType">string</property>
+                </structure>
+                <structure>
+                    <property name="name">state</property>
+                    <text-property name="displayName">state</text-property>
+                    <expression name="expression" type="javascript">dataSetRow["state"]</expression>
+                    <property name="dataType">string</property>
+                </structure>
+                <structure>
+                    <property name="name">attempts</property>
+                    <text-property name="displayName">attempts</text-property>
+                    <expression name="expression" type="javascript">dataSetRow["attempts"]</expression>
+                    <property name="dataType">decimal</property>
+                </structure>
+                <structure>
+                    <property name="name">connects</property>
+                    <text-property name="displayName">connects</text-property>
+                    <expression name="expression" type="javascript">dataSetRow["connects"]</expression>
+                    <property name="dataType">decimal</property>
+                </structure>
+                <structure>
+                    <property name="name">ASR</property>
+                    <text-property name="displayName">ASR</text-property>
+                    <expression name="expression" type="javascript">dataSetRow["ASR"]</expression>
+                    <property name="dataType">decimal</property>
+                </structure>
+            </list-property>
+            <expression name="bookmark" type="javascript">"Top10"</expression>
+            <method name="onCreate"><![CDATA[vars["dataEntry"] = vars["dataEntry"] + "<entity id='" + this.getRowData().getColumnValue("state") + "' value='" + this.getRowData().getColumnValue("ASR")+ "' link='N-executereport.do?__executableName=/BigDataTelco/GeoAreaCode.rptdesign&amp;amp;invokeSubmit=true&amp;amp;__requesttype=immediate&amp;amp;pStateAbbr=" + this.getRowData().getColumnValue("state") + "' /> ";
+]]></method>
+            <list-property name="sort">
+                <structure>
+                    <expression name="key" type="javascript">row["ASR"]</expression>
+                    <property name="direction">desc</property>
+                    <property name="strength">-1</property>
+                </structure>
+            </list-property>
+            <list-property name="filter">
+                <structure>
+                    <property name="operator">top-n</property>
+                    <expression name="expr" type="javascript">row["ASR"]</expression>
+                    <simple-property-list name="value1">
+                        <value type="javascript">20</value>
+                    </simple-property-list>
+                    <property name="updateAggregation">true</property>
+                </structure>
+            </list-property>
+            <column id="164"/>
+            <column id="167">
+                <property name="textAlign">right</property>
+            </column>
+            <header>
+                <row id="123">
+                    <cell id="130">
+                        <label id="131">
+                            <text-property name="text">state</text-property>
+                        </label>
+                    </cell>
+                    <cell id="136">
+                        <property name="paddingLeft">1pt</property>
+                        <property name="paddingRight">5pt</property>
+                        <label id="137">
+                            <text-property name="text">ASR</text-property>
+                        </label>
+                    </cell>
+                </row>
+            </header>
+            <detail>
+                <row id="138">
+                    <method name="onCreate"><![CDATA[if( typeof jj == 'undefined'  ){
+jj=0;
+}
+if( (this.getStyle().visibleFormat != "all") ){
+ if( jj !=0 ){
+  this.getStyle().backgroundColor="RGB(237,238,243)";
+  jj=0;
+ }else{
+  jj++;
+ } 
+}]]></method>
+                    <cell id="145">
+                        <data id="146">
+                            <property name="paddingLeft">5pt</property>
+                            <property name="resultSetColumn">state</property>
+                        </data>
+                    </cell>
+                    <cell id="151">
+                        <property name="paddingLeft">1pt</property>
+                        <property name="paddingRight">5pt</property>
+                        <list-property name="highlightRules">
+                            <structure>
+                                <property name="operator">le</property>
+                                <property name="backgroundColor">#FF0000</property>
+                                <property name="color">#FFFFFF</property>
+                                <expression name="testExpr" type="javascript">row["ASR"]</expression>
+                                <simple-property-list name="value1">
+                                    <value type="javascript">.2099</value>
+                                </simple-property-list>
+                            </structure>
+                            <structure>
+                                <property name="operator">between</property>
+                                <property name="backgroundColor">#FFFF80</property>
+                                <expression name="testExpr" type="javascript">row["ASR"]</expression>
+                                <simple-property-list name="value1">
+                                    <value type="javascript">.2100</value>
+                                </simple-property-list>
+                                <expression name="value2" type="javascript">.3499</expression>
+                            </structure>
+                            <structure>
+                                <property name="operator">ge</property>
+                                <property name="backgroundColor">#00FF00</property>
+                                <expression name="testExpr" type="javascript">row["ASR"]</expression>
+                                <simple-property-list name="value1">
+                                    <value type="javascript">.3500</value>
+                                </simple-property-list>
+                            </structure>
+                        </list-property>
+                        <data id="152">
+                            <property name="resultSetColumn">ASR</property>
+                        </data>
+                    </cell>
+                </row>
+            </detail>
+        </table>
     </body>
     <property name="pageVariables">
         <variable-element name="dataEntry">

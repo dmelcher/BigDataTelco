@@ -1,6 +1,6 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <report xmlns="http://www.eclipse.org/birt/2005/design" version="3.2.23" id="1">
-    <property name="createdBy">Eclipse BIRT Designer Version 3.7.2.v20120817-1705 Build &lt;3.7.2.v20120817-1705></property>
+    <property name="createdBy">Eclipse BIRT Designer Version 3.7.2.v20121022-1705 Build &lt;3.7.2.v20121022-1705></property>
     <property name="units">in</property>
     <property name="iconFile">/templates/blank_report.gif</property>
     <property name="bidiLayoutOrientation">ltr</property>
@@ -391,6 +391,7 @@ order by
     </styles>
     <page-setup>
         <simple-master-page name="Simple MasterPage" id="2">
+            <property name="orientation">landscape</property>
             <page-footer>
                 <text id="3">
                     <property name="contentType">html</property>
@@ -503,7 +504,7 @@ order by
             </header>
             <detail>
                 <row id="75">
-                    <method name="onCreate"><![CDATA[vars["dataEntry"] = vars["dataEntry"] + "<entity id='" + this.getRowData().getColumnValue("state") + "' value='" + this.getRowData().getColumnValue("ASR")+ "' link='N-executereport.do?__executableName=/BigDataTelco/GeoAreaCodeTreeMap.rptdesign&amp;amp;invokeSubmit=true&amp;amp;__requesttype=immediate&amp;amp;__format=HTML&amp;amp;pStateAbbr=" + this.getRowData().getColumnValue("state") + "' /> ";
+                    <method name="onCreate"><![CDATA[vars["dataEntry"] = vars["dataEntry"] + "<entity id='" + this.getRowData().getColumnValue("state") + "' value='" + this.getRowData().getColumnValue("ASR")+ "' link='N-executereport.do?__executableName=/BigDataTelco/GeoAreaCodeTreeMap.rptdesign&amp;amp;invokeSubmit=true&amp;amp;__requesttype=immediate&amp;amp;__format=HTML&amp;amp;pStateAbbr=" + this.getRowData().getColumnValue("state") + "&amp;amp;__vp=ScorecardVolume' /> ";
 ]]></method>
                     <cell id="76">
                         <data id="77">
@@ -578,8 +579,9 @@ order by
 "&lt;/map>";</expression>
                 </variable-element>
             </property>
-            <property name="height">4.225in</property>
-            <property name="width">7.908333333333333in</property>
+            <expression name="bookmark" type="javascript">"map"</expression>
+            <property name="height">4.422in</property>
+            <property name="width">8.219in</property>
         </extended-item>
     </body>
     <property name="pageVariables">

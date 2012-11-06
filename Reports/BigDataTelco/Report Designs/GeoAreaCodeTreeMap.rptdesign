@@ -1,12 +1,6 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <report xmlns="http://www.eclipse.org/birt/2005/design" version="3.2.23" id="1">
-    <property name="createdBy">Eclipse BIRT Designer Version 3.7.2.v20120817-1705 Build &lt;3.7.2.v20120817-1705></property>
-    <list-property name="propertyBindings">
-        <structure>
-            <property name="name">queryText</property>
-            <property name="id">56</property>
-        </structure>
-    </list-property>
+    <property name="createdBy">Eclipse BIRT Designer Version 3.7.2.v20121022-1705 Build &lt;3.7.2.v20121022-1705></property>
     <property name="units">in</property>
     <method name="beforeFactory"><![CDATA[vars["gDataXML"] = "[['Location', 'Parent', 'Attempts (size)', 'ASR increase/decrease (color)']," 
 vars["gDataXML"] += "['" + params["pStateAbbr"].value + "', null, 0,  0]";
@@ -38,14 +32,6 @@ vars["gDataXML"] += "['" + params["pStateAbbr"].value + "', null, 0,  0]";
         </scalar-parameter>
     </parameters>
     <data-sources>
-        <oda-data-source extensionID="org.eclipse.datatools.connectivity.oda.flatfile" name="Medal CountData Source" id="55">
-            <property name="HOME">E:\workspace\Test\Report Designs</property>
-            <property name="DELIMTYPE">COMMA</property>
-            <property name="CHARSET">UTF-8</property>
-            <property name="INCLCOLUMNNAME">YES</property>
-            <property name="INCLTYPELINE">NO</property>
-            <property name="TRAILNULLCOLS">NO</property>
-        </oda-data-source>
         <oda-data-source extensionID="org.eclipse.birt.report.data.oda.jdbc" name="Data Source" id="7">
             <list-property name="privateDriverProperties">
                 <ex-property>
@@ -69,261 +55,6 @@ vars["gDataXML"] += "['" + params["pStateAbbr"].value + "', null, 0,  0]";
         </oda-data-source>
     </data-sources>
     <data-sets>
-        <oda-data-set extensionID="org.eclipse.datatools.connectivity.oda.flatfile.dataSet" name="Medal Count Data Set" id="56">
-            <property name="nullsOrdering">nulls lowest</property>
-            <list-property name="columnHints">
-                <structure>
-                    <property name="columnName">ContinentCode</property>
-                    <property name="analysis">attribute</property>
-                    <text-property name="heading">ContinentCode</text-property>
-                </structure>
-                <structure>
-                    <property name="columnName">Continent</property>
-                    <property name="analysis">attribute</property>
-                    <text-property name="heading">Continent</text-property>
-                </structure>
-                <structure>
-                    <property name="columnName">CountryCode</property>
-                    <property name="analysis">attribute</property>
-                    <text-property name="heading">CountryCode</text-property>
-                </structure>
-                <structure>
-                    <property name="columnName">Country</property>
-                    <property name="analysis">attribute</property>
-                    <text-property name="heading">Country</text-property>
-                </structure>
-                <structure>
-                    <property name="columnName">Discipline</property>
-                    <property name="analysis">attribute</property>
-                    <text-property name="heading">Discipline</text-property>
-                </structure>
-                <structure>
-                    <property name="columnName">Year</property>
-                    <property name="analysis">attribute</property>
-                    <text-property name="heading">Year</text-property>
-                </structure>
-                <structure>
-                    <property name="columnName">MedalCount</property>
-                    <property name="analysis">attribute</property>
-                    <text-property name="heading">MedalCount</text-property>
-                </structure>
-            </list-property>
-            <structure name="cachedMetaData">
-                <list-property name="resultSet">
-                    <structure>
-                        <property name="position">1</property>
-                        <property name="name">ContinentCode</property>
-                        <property name="dataType">string</property>
-                    </structure>
-                    <structure>
-                        <property name="position">2</property>
-                        <property name="name">Continent</property>
-                        <property name="dataType">string</property>
-                    </structure>
-                    <structure>
-                        <property name="position">3</property>
-                        <property name="name">CountryCode</property>
-                        <property name="dataType">string</property>
-                    </structure>
-                    <structure>
-                        <property name="position">4</property>
-                        <property name="name">Country</property>
-                        <property name="dataType">string</property>
-                    </structure>
-                    <structure>
-                        <property name="position">5</property>
-                        <property name="name">Discipline</property>
-                        <property name="dataType">string</property>
-                    </structure>
-                    <structure>
-                        <property name="position">6</property>
-                        <property name="name">Year</property>
-                        <property name="dataType">integer</property>
-                    </structure>
-                    <structure>
-                        <property name="position">7</property>
-                        <property name="name">MedalCount</property>
-                        <property name="dataType">integer</property>
-                    </structure>
-                </list-property>
-            </structure>
-            <property name="dataSource">Medal CountData Source</property>
-            <list-property name="resultSet">
-                <structure>
-                    <property name="position">1</property>
-                    <property name="name">ContinentCode</property>
-                    <property name="nativeName">ContinentCode</property>
-                    <property name="dataType">string</property>
-                    <property name="nativeDataType">12</property>
-                </structure>
-                <structure>
-                    <property name="position">2</property>
-                    <property name="name">Continent</property>
-                    <property name="nativeName">Continent</property>
-                    <property name="dataType">string</property>
-                    <property name="nativeDataType">12</property>
-                </structure>
-                <structure>
-                    <property name="position">3</property>
-                    <property name="name">CountryCode</property>
-                    <property name="nativeName">CountryCode</property>
-                    <property name="dataType">string</property>
-                    <property name="nativeDataType">12</property>
-                </structure>
-                <structure>
-                    <property name="position">4</property>
-                    <property name="name">Country</property>
-                    <property name="nativeName">Country</property>
-                    <property name="dataType">string</property>
-                    <property name="nativeDataType">12</property>
-                </structure>
-                <structure>
-                    <property name="position">5</property>
-                    <property name="name">Discipline</property>
-                    <property name="nativeName">Discipline</property>
-                    <property name="dataType">string</property>
-                    <property name="nativeDataType">12</property>
-                </structure>
-                <structure>
-                    <property name="position">6</property>
-                    <property name="name">Year</property>
-                    <property name="nativeName">Year</property>
-                    <property name="dataType">integer</property>
-                    <property name="nativeDataType">12</property>
-                </structure>
-                <structure>
-                    <property name="position">7</property>
-                    <property name="name">MedalCount</property>
-                    <property name="nativeName">MedalCount</property>
-                    <property name="dataType">integer</property>
-                    <property name="nativeDataType">12</property>
-                </structure>
-            </list-property>
-            <xml-property name="queryText"><![CDATA[select "ContinentCode", "Continent", "CountryCode", "Country", "Discipline", "Year", "MedalCount" from "medalcount.csv" : {"ContinentCode","ContinentCode",STRING;"Continent","Continent",STRING;"CountryCode","CountryCode",STRING;"Country","Country",STRING;"Discipline","Discipline",STRING;"Year","Year",STRING;"MedalCount","MedalCount",STRING}]]></xml-property>
-            <xml-property name="designerValues"><![CDATA[<?xml version="1.0" encoding="UTF-8"?>
-<model:DesignValues xmlns:design="http://www.eclipse.org/datatools/connectivity/oda/design" xmlns:model="http://www.eclipse.org/birt/report/model/adapter/odaModel">
-  <Version>2.0</Version>
-  <design:ResultSets derivedMetaData="true">
-    <design:resultSetDefinitions>
-      <design:resultSetColumns>
-        <design:resultColumnDefinitions>
-          <design:attributes>
-            <design:identifier>
-              <design:name>ContinentCode</design:name>
-              <design:position>1</design:position>
-            </design:identifier>
-            <design:nativeDataTypeCode>12</design:nativeDataTypeCode>
-            <design:precision>-1</design:precision>
-            <design:scale>-1</design:scale>
-            <design:nullability>Unknown</design:nullability>
-          </design:attributes>
-          <design:usageHints>
-            <design:label>ContinentCode</design:label>
-            <design:formattingHints/>
-          </design:usageHints>
-        </design:resultColumnDefinitions>
-        <design:resultColumnDefinitions>
-          <design:attributes>
-            <design:identifier>
-              <design:name>Continent</design:name>
-              <design:position>2</design:position>
-            </design:identifier>
-            <design:nativeDataTypeCode>12</design:nativeDataTypeCode>
-            <design:precision>-1</design:precision>
-            <design:scale>-1</design:scale>
-            <design:nullability>Unknown</design:nullability>
-          </design:attributes>
-          <design:usageHints>
-            <design:label>Continent</design:label>
-            <design:formattingHints/>
-          </design:usageHints>
-        </design:resultColumnDefinitions>
-        <design:resultColumnDefinitions>
-          <design:attributes>
-            <design:identifier>
-              <design:name>CountryCode</design:name>
-              <design:position>3</design:position>
-            </design:identifier>
-            <design:nativeDataTypeCode>12</design:nativeDataTypeCode>
-            <design:precision>-1</design:precision>
-            <design:scale>-1</design:scale>
-            <design:nullability>Unknown</design:nullability>
-          </design:attributes>
-          <design:usageHints>
-            <design:label>CountryCode</design:label>
-            <design:formattingHints/>
-          </design:usageHints>
-        </design:resultColumnDefinitions>
-        <design:resultColumnDefinitions>
-          <design:attributes>
-            <design:identifier>
-              <design:name>Country</design:name>
-              <design:position>4</design:position>
-            </design:identifier>
-            <design:nativeDataTypeCode>12</design:nativeDataTypeCode>
-            <design:precision>-1</design:precision>
-            <design:scale>-1</design:scale>
-            <design:nullability>Unknown</design:nullability>
-          </design:attributes>
-          <design:usageHints>
-            <design:label>Country</design:label>
-            <design:formattingHints/>
-          </design:usageHints>
-        </design:resultColumnDefinitions>
-        <design:resultColumnDefinitions>
-          <design:attributes>
-            <design:identifier>
-              <design:name>Discipline</design:name>
-              <design:position>5</design:position>
-            </design:identifier>
-            <design:nativeDataTypeCode>12</design:nativeDataTypeCode>
-            <design:precision>-1</design:precision>
-            <design:scale>-1</design:scale>
-            <design:nullability>Unknown</design:nullability>
-          </design:attributes>
-          <design:usageHints>
-            <design:label>Discipline</design:label>
-            <design:formattingHints/>
-          </design:usageHints>
-        </design:resultColumnDefinitions>
-        <design:resultColumnDefinitions>
-          <design:attributes>
-            <design:identifier>
-              <design:name>Year</design:name>
-              <design:position>6</design:position>
-            </design:identifier>
-            <design:nativeDataTypeCode>12</design:nativeDataTypeCode>
-            <design:precision>-1</design:precision>
-            <design:scale>-1</design:scale>
-            <design:nullability>Unknown</design:nullability>
-          </design:attributes>
-          <design:usageHints>
-            <design:label>Year</design:label>
-            <design:formattingHints/>
-          </design:usageHints>
-        </design:resultColumnDefinitions>
-        <design:resultColumnDefinitions>
-          <design:attributes>
-            <design:identifier>
-              <design:name>MedalCount</design:name>
-              <design:position>7</design:position>
-            </design:identifier>
-            <design:nativeDataTypeCode>12</design:nativeDataTypeCode>
-            <design:precision>-1</design:precision>
-            <design:scale>-1</design:scale>
-            <design:nullability>Unknown</design:nullability>
-          </design:attributes>
-          <design:usageHints>
-            <design:label>MedalCount</design:label>
-            <design:formattingHints/>
-          </design:usageHints>
-        </design:resultColumnDefinitions>
-      </design:resultSetColumns>
-      <design:criteria/>
-    </design:resultSetDefinitions>
-  </design:ResultSets>
-</model:DesignValues>]]></xml-property>
-        </oda-data-set>
         <oda-data-set extensionID="org.eclipse.birt.report.data.oda.jdbc.JdbcSelectDataSet" name="Data Set" id="8">
             <list-property name="parameters">
                 <structure>
@@ -620,6 +351,10 @@ order by
     </styles>
     <page-setup>
         <simple-master-page name="Simple MasterPage" id="2">
+            <property name="type">custom</property>
+            <property name="height">960px</property>
+            <property name="width">1010px</property>
+            <property name="orientation">landscape</property>
             <page-footer>
                 <text id="3">
                     <property name="contentType">html</property>
@@ -810,11 +545,13 @@ order by
         <label id="164">
             <property name="fontFamily">"Arial"</property>
             <property name="color">gray</property>
-            <text-property name="text">Click to drill down, RMB to drill up, Size - 2012 Medal Count, Color - Difference from 2008</text-property>
+            <property name="textAlign">left</property>
+            <text-property name="text">Click to drill down, Rt Click to drill up, Size = Trunk Volume, Color = ASR Score</text-property>
         </label>
         <text id="163">
+            <property name="textAlign">left</property>
             <property name="contentType">html</property>
-            <text-property name="content"><![CDATA[<div id="visualization" style="boder:1px solid red;width: 600px; height: 400px;"></div>
+            <text-property name="content"><![CDATA[<div id="visualization" style="boder:1px solid red;width: 900px; height: 600px; align: center;"></div>
   
 <script type="text/javascript" src="http://www.google.com/jsapi"></script>
 

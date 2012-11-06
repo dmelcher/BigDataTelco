@@ -334,6 +334,7 @@ order by hour_of_day;]]></xml-property>
                     <property name="dataType">decimal</property>
                 </structure>
             </list-property>
+            <property name="pageBreakInterval">0</property>
             <column id="33">
                 <property name="width">2.5in</property>
             </column>
@@ -716,7 +717,6 @@ order by hour_of_day;]]></xml-property>
 ]]></xml-property>
                             <property name="outputFormat">JS</property>
                             <property name="inheritColumns">true</property>
-                            <expression name="bookmark" type="javascript">"chart"</expression>
                             <property name="height">3.59375in</property>
                             <property name="width">7.885416666666667in</property>
                         </extended-item>
@@ -728,125 +728,815 @@ order by hour_of_day;]]></xml-property>
                         <label id="1296">
                             <text-property name="text">attempts</text-property>
                         </label>
-                        <extended-item extensionName="FlashGadgets" id="1300">
-                            <xml-property name="xmlRepresentation"><![CDATA[<ActuateChart version="1.0">
- <Gadget backgroundColor="FEFEFE" borderColor="000000" borderThickness="2" borderTransparency="255" colorScheme="1" prefix="" showBorder="false" showGaugeLabels="false" showValueAboveNeedle="false" subTitle="" subType="" suffix="" title="" turnOffAnimation="false" turnOffDefaultAnimination="false" type="Spark" version="1.0.0">
-  <gadgetPartsSupportingEffects _body="background"/>
-  <gadgetPartsSupportingEffects _body="caption"/>
-  <gadgetPartsSupportingEffects _body="subcaption"/>
-  <gadgetPartsSupportingEffects _body="plot"/>
-  <gadgetPartsSupportingEffects _body="anchors"/>
-  <gadgetPartsSupportingEffects _body="openvalue"/>
-  <gadgetPartsSupportingEffects _body="closevalue"/>
-  <gadgetPartsSupportingEffects _body="highlowvalue"/>
-  <gadgetPartsSupportingEffects _body="trendlines"/>
-  <gadgetPartsSupportingEffects _body="tooltip"/>
-  <scale autoAdjustMajorTickMarks="true" majorTickMarksCount="5" max="100" min="0" minorTickMarksCount="4"/>
-  <region endValue="35.0" label="A" startValue="0.0"/>
-  <region endValue="70.0" label="B" startValue="35.0"/>
-  <region endValue="100.0" label="C" startValue="70.0"/>
-  <thresholds isDashed="false" isTrendZone="false" length="40" lineWidth="4" markerRadius="4" showMarker="false" showValueOnTop="true" transparency="255"/>
-  <ticks maxLabel="" minLabel="" placeTicksInside="false" placeValuesInside="false" showLimits="true" showTickMarks="true" showTickValues="true" ticksBelowGauge="true" ticksOnRight="false">
-   <major height="8" width="1"/>
-   <minor height="3" width="1"/>
-  </ticks>
-  <toolTip showToolTip="true"/>
-  <valueDefinition query="row[&quot;attempts&quot;]"/>
-  <linearGauge showNeedleAbove="false" showNeedleValue="true" showRoundCorners="true">
-   <needle borderColor="000000" borderTransparency="255" borderWidth="1" fillColor="000000" fillTransparency="255" shape="0" size="10" tooltipShowValue="true"/>
-  </linearGauge>
-  <spark connectMissingData="false">
-   <anchor shape="3" showCloseAnchor="true" showHighAnchor="true" showLowAnchor="true" showOpenAnchor="true" showOtherAnchors="false" size="3"/>
-   <sparkPlot lineColor="ffffff" lineTransparency="255" lineWidth="1" showCloseValue="false" showHighLowValue="true" showOpenValue="false"/>
-  </spark>
- </Gadget>
+                        <extended-item extensionName="Chart" id="1301">
+                            <xml-property name="xmlRepresentation"><![CDATA[<ActuateChart version="2.5.3">
+ <ChartWithAxes version="2.5.3" type="Line Chart" subType="Overlay">
+  <block>
+   <children _type="TitleBlock" visible="false">
+    <outline>
+     <color _nil="1"/>
+    </outline>
+    <label>
+     <background _nil="1"/>
+     <outline>
+      <color _nil="1"/>
+     </outline>
+    </label>
+   </children>
+   <children _type="Plot">
+    <outline>
+     <color _nil="1"/>
+    </outline>
+    <clientArea>
+     <outline>
+      <color _nil="1"/>
+     </outline>
+    </clientArea>
+   </children>
+   <children _type="Legend" anchor="4" visible="false" orientation="0" position="0">
+    <outline>
+     <color _nil="1"/>
+    </outline>
+    <clientArea>
+     <outline>
+      <color _nil="1"/>
+     </outline>
+    </clientArea>
+    <separator>
+     <color _nil="1"/>
+    </separator>
+    <title>
+     <background _nil="1"/>
+     <outline>
+      <color _nil="1"/>
+     </outline>
+    </title>
+   </children>
+   <bounds _body="0.0,0.0,212.0,130.0"/>
+   <outline>
+    <color _nil="1"/>
+   </outline>
+   <background _body=",0,255,255,255"/>
+  </block>
+  <extendedProperties name="enable.area.alt" value="false"/>
+  <extendedProperties name="enable.drill.category" value="true"/>
+  <extendedProperties name="enable.drill.series" value="true"/>
+  <extendedProperties name="jschart.client.script" value="beforeRendering: function(options, chart)&#13;&#10;&#13;&#10;{&#13;&#10;&#13;&#10;//You can change options here.&#13;&#10;&#13;&#10;if (options.xAxis.categories.length &gt; 20) {&#13;&#10;&#13;&#10;&#13;&#10;} &#13;&#10;&#13;&#10;&#13;&#10;options.plotOptions = {&#13;&#10;&#13;&#10;area: {&#13;&#10;&#13;&#10;animation:{duration:2000}, &#13;&#10;&#13;&#10;&#13;&#10;shadow: true,&#13;&#10;&#13;&#10;}&#13;&#10;&#13;&#10;};&#13;&#10;&#13;&#10;&#13;&#10;options.colors[0] = {&#13;&#10;&#13;&#10;linearGradient: [0, 0, 0, 400],&#13;&#10;&#13;&#10;stops: [&#13;&#10;&#13;&#10;[0, options.colors[0]],&#13;&#10;&#13;&#10;[1, &#039;rgba(0,0,0,0)&#039;]&#13;&#10;&#13;&#10;]&#13;&#10;&#13;&#10;};&#13;&#10;&#13;&#10;options.colors[1] = {&#13;&#10;&#13;&#10;linearGradient: [0, 0, 0, 600],&#13;&#10;&#13;&#10;stops: [&#13;&#10;&#13;&#10;[0, options.colors[1]],&#13;&#10;&#13;&#10;[1, &#039;rgba(0,0,0,0)&#039;]&#13;&#10;&#13;&#10;]&#13;&#10;&#13;&#10;};&#13;&#10;&#13;&#10;options.xAxis = {&#13;&#10;&#13;&#10;endOnTick: true,&#13;&#10;&#13;&#10;maxPadding: 0.01,&#13;&#10;&#13;&#10;startOnTick: true &#13;&#10;&#13;&#10;}&#13;&#10;&#13;&#10;&#13;&#10;},"/>
+  <extendedProperties name="jschart.zoom" value="xy"/>
+  <sampleData>
+   <baseSampleData dataSetRepresentation="6,4,12,8,10"/>
+   <orthogonalSampleData dataSetRepresentation="6,4,12,8,10" seriesDefinitionIndex="0"/>
+  </sampleData>
+  <interactivity legendBehavior="1"/>
+  <emptyMessage>
+   <caption value="This chart contains no data."/>
+   <background _body=",64,127,127,127"/>
+   <outline>
+    <color _body=",128,127,127,127"/>
+   </outline>
+  </emptyMessage>
+  <axes type="0">
+   <title visible="false">
+    <background _nil="1"/>
+    <outline>
+     <color _nil="1"/>
+    </outline>
+   </title>
+   <associatedAxes primaryAxis="true" percent="false">
+    <title visible="false">
+     <background _nil="1"/>
+     <outline>
+      <color _nil="1"/>
+     </outline>
+    </title>
+    <seriesDefinitions>
+     <query definition=""/>
+     <seriesPalette>
+      <entries _body=",255,255,255,255"/>
+      <entries _body=",255,242,88,106"/>
+      <entries _body=",255,232,172,57"/>
+      <entries _body=",255,255,102,0"/>
+      <entries _body=",255,64,128,128"/>
+      <entries _body=",255,128,128,192"/>
+      <entries _body=",255,170,85,85"/>
+      <entries _body=",255,128,128,0"/>
+      <entries _body=",255,192,192,192"/>
+      <entries _body=",255,255,255,128"/>
+      <entries _body=",255,128,192,128"/>
+      <entries _body=",255,7,146,94"/>
+      <entries _body=",255,0,128,255"/>
+      <entries _body=",255,255,128,192"/>
+      <entries _body=",255,0,255,255"/>
+      <entries _body=",255,255,128,128"/>
+      <entries _body=",255,0,128,192"/>
+      <entries _body=",255,128,128,192"/>
+      <entries _body=",255,255,0,255"/>
+      <entries _body=",255,128,64,64"/>
+      <entries _body=",255,255,128,64"/>
+      <entries _body=",255,80,240,120"/>
+      <entries _body=",255,0,64,128"/>
+      <entries _body=",255,128,0,64"/>
+      <entries _body=",255,255,0,128"/>
+      <entries _body=",255,128,128,64"/>
+      <entries _body=",255,128,128,128"/>
+      <entries _body=",255,255,128,255"/>
+      <entries _body=",255,0,64,0"/>
+      <entries _body=",255,0,0,0"/>
+      <entries _body=",255,255,255,255"/>
+      <entries _body=",255,255,128,0"/>
+     </seriesPalette>
+     <series _type="LineSeries" stacked="false" translucent="false">
+      <label>
+       <background _nil="1"/>
+       <outline>
+        <color _nil="1"/>
+       </outline>
+      </label>
+      <dataDefinition definition="row[&quot;attempts&quot;]">
+       <grouping/>
+      </dataDefinition>
+      <dataPoint separator=", ">
+       <components type="1"/>
+      </dataPoint>
+      <triggers condition="6">
+       <action type="1">
+        <value _type="TooltipValue" text="" delay="200"/>
+       </action>
+      </triggers>
+      <curveFitting _nil="1"/>
+      <markers visible="false">
+       <outline/>
+      </markers>
+      <lineAttributes thickness="3">
+       <color _nil="1"/>
+      </lineAttributes>
+     </series>
+    </seriesDefinitions>
+    <lineAttributes visible="false">
+     <color _body=",255,192,192,192"/>
+    </lineAttributes>
+    <label visible="false">
+     <background _nil="1"/>
+     <outline>
+      <color _nil="1"/>
+     </outline>
+    </label>
+    <majorGrid>
+     <lineAttributes>
+      <color _nil="1"/>
+     </lineAttributes>
+     <tickAttributes visible="false">
+      <color _nil="1"/>
+     </tickAttributes>
+    </majorGrid>
+    <minorGrid>
+     <lineAttributes>
+      <color _nil="1"/>
+     </lineAttributes>
+     <tickAttributes>
+      <color _nil="1"/>
+     </tickAttributes>
+    </minorGrid>
+    <origin>
+     <value _nil="1"/>
+    </origin>
+   </associatedAxes>
+   <seriesDefinitions>
+    <query definition=""/>
+    <seriesPalette>
+     <entries _body=",255,255,255,255"/>
+     <entries _body=",255,242,88,106"/>
+     <entries _body=",255,232,172,57"/>
+     <entries _body=",255,255,102,0"/>
+     <entries _body=",255,64,128,128"/>
+     <entries _body=",255,128,128,192"/>
+     <entries _body=",255,170,85,85"/>
+     <entries _body=",255,128,128,0"/>
+     <entries _body=",255,192,192,192"/>
+     <entries _body=",255,255,255,128"/>
+     <entries _body=",255,128,192,128"/>
+     <entries _body=",255,7,146,94"/>
+     <entries _body=",255,0,128,255"/>
+     <entries _body=",255,255,128,192"/>
+     <entries _body=",255,0,255,255"/>
+     <entries _body=",255,255,128,128"/>
+     <entries _body=",255,0,128,192"/>
+     <entries _body=",255,128,128,192"/>
+     <entries _body=",255,255,0,255"/>
+     <entries _body=",255,128,64,64"/>
+     <entries _body=",255,255,128,64"/>
+     <entries _body=",255,80,240,120"/>
+     <entries _body=",255,0,64,128"/>
+     <entries _body=",255,128,0,64"/>
+     <entries _body=",255,255,0,128"/>
+     <entries _body=",255,128,128,64"/>
+     <entries _body=",255,128,128,128"/>
+     <entries _body=",255,255,128,255"/>
+     <entries _body=",255,0,64,0"/>
+     <entries _body=",255,0,0,0"/>
+     <entries _body=",255,255,255,255"/>
+     <entries _body=",255,255,128,0"/>
+    </seriesPalette>
+    <series seriesIdentifier="">
+     <label>
+      <background _nil="1"/>
+      <outline>
+       <color _nil="1"/>
+      </outline>
+     </label>
+     <dataDefinition definition="row[&quot;hour_of_day&quot;]"/>
+     <dataPoint separator=", ">
+      <components type="1"/>
+     </dataPoint>
+     <curveFitting _nil="1"/>
+    </series>
+    <grouping enabled="true" groupType="0"/>
+    <sortKey/>
+   </seriesDefinitions>
+   <lineAttributes visible="false">
+    <color _body=",255,192,192,192"/>
+   </lineAttributes>
+   <label visible="false">
+    <caption>
+     <font rotation="45.0"/>
+    </caption>
+    <background _nil="1"/>
+    <outline>
+     <color _nil="1"/>
+    </outline>
+   </label>
+   <majorGrid>
+    <lineAttributes>
+     <color _nil="1"/>
+    </lineAttributes>
+    <tickAttributes visible="false">
+     <color _nil="1"/>
+    </tickAttributes>
+   </majorGrid>
+   <minorGrid>
+    <lineAttributes>
+     <color _nil="1"/>
+    </lineAttributes>
+    <tickAttributes>
+     <color _nil="1"/>
+    </tickAttributes>
+   </minorGrid>
+   <origin>
+    <value _nil="1"/>
+   </origin>
+  </axes>
+  <rotation>
+   <angles/>
+  </rotation>
+ </ChartWithAxes>
 </ActuateChart>
 ]]></xml-property>
-                            <property name="inheritColumns">false</property>
-                            <property name="height">0.875in</property>
-                            <property name="width">1.8645833333333333in</property>
+                            <property name="outputFormat">JS</property>
+                            <property name="inheritColumns">true</property>
+                            <property name="height">0.9270833333333334in</property>
+                            <property name="width">1.9479166666666667in</property>
                         </extended-item>
                         <label id="1297">
                             <text-property name="text">connects</text-property>
                         </label>
-                        <extended-item extensionName="FlashGadgets" id="1298">
-                            <xml-property name="xmlRepresentation"><![CDATA[<ActuateChart version="1.0">
- <Gadget backgroundColor="FEFEFE" borderColor="000000" borderThickness="2" borderTransparency="255" colorScheme="1" prefix="" showBorder="false" showGaugeLabels="false" showValueAboveNeedle="false" subTitle="" subType="" suffix="" title="" turnOffAnimation="false" turnOffDefaultAnimination="false" type="Spark" version="1.0.0">
-  <gadgetPartsSupportingEffects _body="background"/>
-  <gadgetPartsSupportingEffects _body="caption"/>
-  <gadgetPartsSupportingEffects _body="subcaption"/>
-  <gadgetPartsSupportingEffects _body="plot"/>
-  <gadgetPartsSupportingEffects _body="anchors"/>
-  <gadgetPartsSupportingEffects _body="openvalue"/>
-  <gadgetPartsSupportingEffects _body="closevalue"/>
-  <gadgetPartsSupportingEffects _body="highlowvalue"/>
-  <gadgetPartsSupportingEffects _body="trendlines"/>
-  <gadgetPartsSupportingEffects _body="tooltip"/>
-  <scale autoAdjustMajorTickMarks="true" majorTickMarksCount="5" max="100" min="0" minorTickMarksCount="4"/>
-  <region endValue="35.0" label="A" startValue="0.0"/>
-  <region endValue="70.0" label="B" startValue="35.0"/>
-  <region endValue="100.0" label="C" startValue="70.0"/>
-  <thresholds isDashed="false" isTrendZone="false" length="40" lineWidth="4" markerRadius="4" showMarker="false" showValueOnTop="true" transparency="255"/>
-  <ticks maxLabel="" minLabel="" placeTicksInside="false" placeValuesInside="false" showLimits="true" showTickMarks="true" showTickValues="true" ticksBelowGauge="true" ticksOnRight="false">
-   <major height="8" width="1"/>
-   <minor height="3" width="1"/>
-  </ticks>
-  <toolTip showToolTip="true"/>
-  <valueDefinition query="row[&quot;connects&quot;]"/>
-  <linearGauge showNeedleAbove="false" showNeedleValue="true" showRoundCorners="true">
-   <needle borderColor="000000" borderTransparency="255" borderWidth="1" fillColor="000000" fillTransparency="255" shape="0" size="10" tooltipShowValue="true"/>
-  </linearGauge>
-  <spark connectMissingData="false">
-   <anchor shape="3" showCloseAnchor="true" showHighAnchor="true" showLowAnchor="true" showOpenAnchor="true" showOtherAnchors="false" size="3"/>
-   <sparkPlot lineColor="ffffff" lineTransparency="255" lineWidth="1" showCloseValue="false" showHighLowValue="true" showOpenValue="false"/>
-  </spark>
- </Gadget>
+                        <extended-item extensionName="Chart" id="1302">
+                            <xml-property name="xmlRepresentation"><![CDATA[<ActuateChart version="2.5.3">
+ <ChartWithAxes version="2.5.3" type="Line Chart" subType="Overlay">
+  <block>
+   <children _type="TitleBlock" visible="false">
+    <outline>
+     <color _nil="1"/>
+    </outline>
+    <label>
+     <background _nil="1"/>
+     <outline>
+      <color _nil="1"/>
+     </outline>
+    </label>
+   </children>
+   <children _type="Plot">
+    <outline>
+     <color _nil="1"/>
+    </outline>
+    <clientArea>
+     <outline>
+      <color _nil="1"/>
+     </outline>
+    </clientArea>
+   </children>
+   <children _type="Legend" anchor="4" visible="false" orientation="0" position="0">
+    <outline>
+     <color _nil="1"/>
+    </outline>
+    <clientArea>
+     <outline>
+      <color _nil="1"/>
+     </outline>
+    </clientArea>
+    <separator>
+     <color _nil="1"/>
+    </separator>
+    <title>
+     <background _nil="1"/>
+     <outline>
+      <color _nil="1"/>
+     </outline>
+    </title>
+   </children>
+   <bounds _body="0.0,0.0,212.0,130.0"/>
+   <outline>
+    <color _nil="1"/>
+   </outline>
+   <background _body=",0,255,255,255"/>
+  </block>
+  <extendedProperties name="enable.area.alt" value="false"/>
+  <extendedProperties name="enable.drill.category" value="true"/>
+  <extendedProperties name="enable.drill.series" value="true"/>
+  <extendedProperties name="jschart.client.script" value="beforeRendering: function(options, chart)&#13;&#10;&#13;&#10;{&#13;&#10;&#13;&#10;//You can change options here.&#13;&#10;&#13;&#10;if (options.xAxis.categories.length &gt; 20) {&#13;&#10;&#13;&#10;&#13;&#10;} &#13;&#10;&#13;&#10;&#13;&#10;options.plotOptions = {&#13;&#10;&#13;&#10;area: {&#13;&#10;&#13;&#10;animation:{duration:2000}, &#13;&#10;&#13;&#10;&#13;&#10;shadow: true,&#13;&#10;&#13;&#10;}&#13;&#10;&#13;&#10;};&#13;&#10;&#13;&#10;&#13;&#10;options.colors[0] = {&#13;&#10;&#13;&#10;linearGradient: [0, 0, 0, 400],&#13;&#10;&#13;&#10;stops: [&#13;&#10;&#13;&#10;[0, options.colors[0]],&#13;&#10;&#13;&#10;[1, &#039;rgba(0,0,0,0)&#039;]&#13;&#10;&#13;&#10;]&#13;&#10;&#13;&#10;};&#13;&#10;&#13;&#10;options.colors[1] = {&#13;&#10;&#13;&#10;linearGradient: [0, 0, 0, 600],&#13;&#10;&#13;&#10;stops: [&#13;&#10;&#13;&#10;[0, options.colors[1]],&#13;&#10;&#13;&#10;[1, &#039;rgba(0,0,0,0)&#039;]&#13;&#10;&#13;&#10;]&#13;&#10;&#13;&#10;};&#13;&#10;&#13;&#10;options.xAxis = {&#13;&#10;&#13;&#10;endOnTick: true,&#13;&#10;&#13;&#10;maxPadding: 0.01,&#13;&#10;&#13;&#10;startOnTick: true &#13;&#10;&#13;&#10;}&#13;&#10;&#13;&#10;&#13;&#10;},"/>
+  <extendedProperties name="jschart.zoom" value="xy"/>
+  <sampleData>
+   <baseSampleData dataSetRepresentation="6,4,12,8,10"/>
+   <orthogonalSampleData dataSetRepresentation="6,4,12,8,10" seriesDefinitionIndex="0"/>
+  </sampleData>
+  <interactivity legendBehavior="1"/>
+  <emptyMessage>
+   <caption value="This chart contains no data."/>
+   <background _body=",64,127,127,127"/>
+   <outline>
+    <color _body=",128,127,127,127"/>
+   </outline>
+  </emptyMessage>
+  <axes type="0">
+   <title visible="false">
+    <background _nil="1"/>
+    <outline>
+     <color _nil="1"/>
+    </outline>
+   </title>
+   <associatedAxes primaryAxis="true" percent="false">
+    <title visible="false">
+     <background _nil="1"/>
+     <outline>
+      <color _nil="1"/>
+     </outline>
+    </title>
+    <seriesDefinitions>
+     <query definition=""/>
+     <seriesPalette>
+      <entries _body=",255,255,255,255"/>
+      <entries _body=",255,242,88,106"/>
+      <entries _body=",255,232,172,57"/>
+      <entries _body=",255,255,102,0"/>
+      <entries _body=",255,64,128,128"/>
+      <entries _body=",255,128,128,192"/>
+      <entries _body=",255,170,85,85"/>
+      <entries _body=",255,128,128,0"/>
+      <entries _body=",255,192,192,192"/>
+      <entries _body=",255,255,255,128"/>
+      <entries _body=",255,128,192,128"/>
+      <entries _body=",255,7,146,94"/>
+      <entries _body=",255,0,128,255"/>
+      <entries _body=",255,255,128,192"/>
+      <entries _body=",255,0,255,255"/>
+      <entries _body=",255,255,128,128"/>
+      <entries _body=",255,0,128,192"/>
+      <entries _body=",255,128,128,192"/>
+      <entries _body=",255,255,0,255"/>
+      <entries _body=",255,128,64,64"/>
+      <entries _body=",255,255,128,64"/>
+      <entries _body=",255,80,240,120"/>
+      <entries _body=",255,0,64,128"/>
+      <entries _body=",255,128,0,64"/>
+      <entries _body=",255,255,0,128"/>
+      <entries _body=",255,128,128,64"/>
+      <entries _body=",255,128,128,128"/>
+      <entries _body=",255,255,128,255"/>
+      <entries _body=",255,0,64,0"/>
+      <entries _body=",255,0,0,0"/>
+      <entries _body=",255,255,255,255"/>
+      <entries _body=",255,255,128,0"/>
+     </seriesPalette>
+     <series _type="LineSeries" stacked="false" translucent="false">
+      <label>
+       <background _nil="1"/>
+       <outline>
+        <color _nil="1"/>
+       </outline>
+      </label>
+      <dataDefinition definition="row[&quot;connects&quot;]">
+       <grouping/>
+      </dataDefinition>
+      <dataPoint separator=", ">
+       <components type="1"/>
+      </dataPoint>
+      <triggers condition="6">
+       <action type="1">
+        <value _type="TooltipValue" text="" delay="200"/>
+       </action>
+      </triggers>
+      <curveFitting _nil="1"/>
+      <markers visible="false">
+       <outline/>
+      </markers>
+      <lineAttributes thickness="3">
+       <color _nil="1"/>
+      </lineAttributes>
+     </series>
+    </seriesDefinitions>
+    <lineAttributes visible="false">
+     <color _body=",255,192,192,192"/>
+    </lineAttributes>
+    <label visible="false">
+     <background _nil="1"/>
+     <outline>
+      <color _nil="1"/>
+     </outline>
+    </label>
+    <majorGrid>
+     <lineAttributes>
+      <color _nil="1"/>
+     </lineAttributes>
+     <tickAttributes visible="false">
+      <color _nil="1"/>
+     </tickAttributes>
+    </majorGrid>
+    <minorGrid>
+     <lineAttributes>
+      <color _nil="1"/>
+     </lineAttributes>
+     <tickAttributes>
+      <color _nil="1"/>
+     </tickAttributes>
+    </minorGrid>
+    <origin>
+     <value _nil="1"/>
+    </origin>
+   </associatedAxes>
+   <seriesDefinitions>
+    <query definition=""/>
+    <seriesPalette>
+     <entries _body=",255,255,255,255"/>
+     <entries _body=",255,242,88,106"/>
+     <entries _body=",255,232,172,57"/>
+     <entries _body=",255,255,102,0"/>
+     <entries _body=",255,64,128,128"/>
+     <entries _body=",255,128,128,192"/>
+     <entries _body=",255,170,85,85"/>
+     <entries _body=",255,128,128,0"/>
+     <entries _body=",255,192,192,192"/>
+     <entries _body=",255,255,255,128"/>
+     <entries _body=",255,128,192,128"/>
+     <entries _body=",255,7,146,94"/>
+     <entries _body=",255,0,128,255"/>
+     <entries _body=",255,255,128,192"/>
+     <entries _body=",255,0,255,255"/>
+     <entries _body=",255,255,128,128"/>
+     <entries _body=",255,0,128,192"/>
+     <entries _body=",255,128,128,192"/>
+     <entries _body=",255,255,0,255"/>
+     <entries _body=",255,128,64,64"/>
+     <entries _body=",255,255,128,64"/>
+     <entries _body=",255,80,240,120"/>
+     <entries _body=",255,0,64,128"/>
+     <entries _body=",255,128,0,64"/>
+     <entries _body=",255,255,0,128"/>
+     <entries _body=",255,128,128,64"/>
+     <entries _body=",255,128,128,128"/>
+     <entries _body=",255,255,128,255"/>
+     <entries _body=",255,0,64,0"/>
+     <entries _body=",255,0,0,0"/>
+     <entries _body=",255,255,255,255"/>
+     <entries _body=",255,255,128,0"/>
+    </seriesPalette>
+    <series seriesIdentifier="">
+     <label>
+      <background _nil="1"/>
+      <outline>
+       <color _nil="1"/>
+      </outline>
+     </label>
+     <dataDefinition definition="row[&quot;hour_of_day&quot;]"/>
+     <dataPoint separator=", ">
+      <components type="1"/>
+     </dataPoint>
+     <curveFitting _nil="1"/>
+    </series>
+    <grouping enabled="true" groupType="0"/>
+    <sortKey/>
+   </seriesDefinitions>
+   <lineAttributes visible="false">
+    <color _body=",255,192,192,192"/>
+   </lineAttributes>
+   <label visible="false">
+    <caption>
+     <font rotation="45.0"/>
+    </caption>
+    <background _nil="1"/>
+    <outline>
+     <color _nil="1"/>
+    </outline>
+   </label>
+   <majorGrid>
+    <lineAttributes>
+     <color _nil="1"/>
+    </lineAttributes>
+    <tickAttributes visible="false">
+     <color _nil="1"/>
+    </tickAttributes>
+   </majorGrid>
+   <minorGrid>
+    <lineAttributes>
+     <color _nil="1"/>
+    </lineAttributes>
+    <tickAttributes>
+     <color _nil="1"/>
+    </tickAttributes>
+   </minorGrid>
+   <origin>
+    <value _nil="1"/>
+   </origin>
+  </axes>
+  <rotation>
+   <angles/>
+  </rotation>
+ </ChartWithAxes>
 </ActuateChart>
 ]]></xml-property>
-                            <property name="inheritColumns">false</property>
-                            <property name="height">0.875in</property>
-                            <property name="width">1.8645833333333333in</property>
+                            <property name="outputFormat">JS</property>
+                            <property name="inheritColumns">true</property>
+                            <property name="height">0.9270833333333334in</property>
+                            <property name="width">1.9479166666666667in</property>
                         </extended-item>
-                        <label id="1299">
+                        <label id="1303">
                             <text-property name="text">ASR</text-property>
                         </label>
-                        <extended-item extensionName="FlashGadgets" id="1291">
-                            <xml-property name="xmlRepresentation"><![CDATA[<ActuateChart version="1.0">
- <Gadget backgroundColor="FEFEFE" borderColor="000000" borderThickness="2" borderTransparency="255" colorScheme="1" prefix="" showBorder="false" showGaugeLabels="false" showValueAboveNeedle="false" subTitle="" subType="" suffix="" title="" turnOffAnimation="false" turnOffDefaultAnimination="false" type="Spark" version="1.0.0">
-  <gadgetPartsSupportingEffects _body="background"/>
-  <gadgetPartsSupportingEffects _body="caption"/>
-  <gadgetPartsSupportingEffects _body="subcaption"/>
-  <gadgetPartsSupportingEffects _body="plot"/>
-  <gadgetPartsSupportingEffects _body="anchors"/>
-  <gadgetPartsSupportingEffects _body="openvalue"/>
-  <gadgetPartsSupportingEffects _body="closevalue"/>
-  <gadgetPartsSupportingEffects _body="highlowvalue"/>
-  <gadgetPartsSupportingEffects _body="trendlines"/>
-  <gadgetPartsSupportingEffects _body="tooltip"/>
-  <scale autoAdjustMajorTickMarks="true" majorTickMarksCount="5" max="1.0" min="0.97" minorTickMarksCount="4"/>
-  <region endValue="35.0" label="A" startValue="0.0"/>
-  <region endValue="70.0" label="B" startValue="35.0"/>
-  <region endValue="100.0" label="C" startValue="70.0"/>
-  <thresholds isDashed="false" isTrendZone="false" length="40" lineWidth="4" markerRadius="4" showMarker="false" showValueOnTop="true" transparency="255"/>
-  <ticks maxLabel="" minLabel="" placeTicksInside="false" placeValuesInside="false" showLimits="true" showTickMarks="true" showTickValues="true" ticksBelowGauge="true" ticksOnRight="false">
-   <major height="8" width="1"/>
-   <minor height="3" width="1"/>
-  </ticks>
-  <toolTip showToolTip="true"/>
-  <valueDefinition query="row[&quot;ASR&quot;]"/>
-  <linearGauge showNeedleAbove="false" showNeedleValue="true" showRoundCorners="true">
-   <needle borderColor="000000" borderTransparency="255" borderWidth="1" fillColor="000000" fillTransparency="255" shape="0" size="10" tooltipShowValue="true"/>
-  </linearGauge>
-  <spark connectMissingData="false">
-   <anchor shape="3" showCloseAnchor="true" showHighAnchor="true" showLowAnchor="true" showOpenAnchor="true" showOtherAnchors="false" size="3"/>
-   <sparkPlot lineColor="ffffff" lineTransparency="255" lineWidth="1" showCloseValue="false" showHighLowValue="true" showOpenValue="false"/>
-  </spark>
- </Gadget>
+                        <extended-item extensionName="Chart" id="1304">
+                            <xml-property name="xmlRepresentation"><![CDATA[<ActuateChart version="2.5.3">
+ <ChartWithAxes version="2.5.3" type="Line Chart" subType="Overlay">
+  <block>
+   <children _type="TitleBlock" visible="false">
+    <outline>
+     <color _nil="1"/>
+    </outline>
+    <label>
+     <background _nil="1"/>
+     <outline>
+      <color _nil="1"/>
+     </outline>
+    </label>
+   </children>
+   <children _type="Plot">
+    <outline>
+     <color _nil="1"/>
+    </outline>
+    <clientArea>
+     <outline>
+      <color _nil="1"/>
+     </outline>
+    </clientArea>
+   </children>
+   <children _type="Legend" anchor="4" visible="false" orientation="0" position="0">
+    <outline>
+     <color _nil="1"/>
+    </outline>
+    <clientArea>
+     <outline>
+      <color _nil="1"/>
+     </outline>
+    </clientArea>
+    <separator>
+     <color _nil="1"/>
+    </separator>
+    <title>
+     <background _nil="1"/>
+     <outline>
+      <color _nil="1"/>
+     </outline>
+    </title>
+   </children>
+   <bounds _body="0.0,0.0,212.0,130.0"/>
+   <outline>
+    <color _nil="1"/>
+   </outline>
+   <background _body=",0,255,255,255"/>
+  </block>
+  <extendedProperties name="enable.area.alt" value="false"/>
+  <extendedProperties name="enable.drill.category" value="true"/>
+  <extendedProperties name="enable.drill.series" value="true"/>
+  <extendedProperties name="jschart.client.script" value="beforeRendering: function(options, chart)&#13;&#10;&#13;&#10;{&#13;&#10;&#13;&#10;//You can change options here.&#13;&#10;&#13;&#10;if (options.xAxis.categories.length &gt; 20) {&#13;&#10;&#13;&#10;&#13;&#10;} &#13;&#10;&#13;&#10;&#13;&#10;options.plotOptions = {&#13;&#10;&#13;&#10;area: {&#13;&#10;&#13;&#10;animation:{duration:2000}, &#13;&#10;&#13;&#10;&#13;&#10;shadow: true,&#13;&#10;&#13;&#10;}&#13;&#10;&#13;&#10;};&#13;&#10;&#13;&#10;&#13;&#10;options.colors[0] = {&#13;&#10;&#13;&#10;linearGradient: [0, 0, 0, 400],&#13;&#10;&#13;&#10;stops: [&#13;&#10;&#13;&#10;[0, options.colors[0]],&#13;&#10;&#13;&#10;[1, &#039;rgba(0,0,0,0)&#039;]&#13;&#10;&#13;&#10;]&#13;&#10;&#13;&#10;};&#13;&#10;&#13;&#10;options.colors[1] = {&#13;&#10;&#13;&#10;linearGradient: [0, 0, 0, 600],&#13;&#10;&#13;&#10;stops: [&#13;&#10;&#13;&#10;[0, options.colors[1]],&#13;&#10;&#13;&#10;[1, &#039;rgba(0,0,0,0)&#039;]&#13;&#10;&#13;&#10;]&#13;&#10;&#13;&#10;};&#13;&#10;&#13;&#10;options.xAxis = {&#13;&#10;&#13;&#10;endOnTick: true,&#13;&#10;&#13;&#10;maxPadding: 0.01,&#13;&#10;&#13;&#10;startOnTick: true &#13;&#10;&#13;&#10;}&#13;&#10;&#13;&#10;&#13;&#10;},"/>
+  <extendedProperties name="jschart.zoom" value="xy"/>
+  <sampleData>
+   <baseSampleData dataSetRepresentation="6,4,12,8,10"/>
+   <orthogonalSampleData dataSetRepresentation="6,4,12,8,10" seriesDefinitionIndex="0"/>
+  </sampleData>
+  <interactivity legendBehavior="1"/>
+  <emptyMessage>
+   <caption value="This chart contains no data."/>
+   <background _body=",64,127,127,127"/>
+   <outline>
+    <color _body=",128,127,127,127"/>
+   </outline>
+  </emptyMessage>
+  <axes type="0">
+   <title visible="false">
+    <background _nil="1"/>
+    <outline>
+     <color _nil="1"/>
+    </outline>
+   </title>
+   <associatedAxes primaryAxis="true" percent="false">
+    <title visible="false">
+     <background _nil="1"/>
+     <outline>
+      <color _nil="1"/>
+     </outline>
+    </title>
+    <seriesDefinitions>
+     <query definition=""/>
+     <seriesPalette>
+      <entries _body=",255,255,255,255"/>
+      <entries _body=",255,242,88,106"/>
+      <entries _body=",255,232,172,57"/>
+      <entries _body=",255,255,102,0"/>
+      <entries _body=",255,64,128,128"/>
+      <entries _body=",255,128,128,192"/>
+      <entries _body=",255,170,85,85"/>
+      <entries _body=",255,128,128,0"/>
+      <entries _body=",255,192,192,192"/>
+      <entries _body=",255,255,255,128"/>
+      <entries _body=",255,128,192,128"/>
+      <entries _body=",255,7,146,94"/>
+      <entries _body=",255,0,128,255"/>
+      <entries _body=",255,255,128,192"/>
+      <entries _body=",255,0,255,255"/>
+      <entries _body=",255,255,128,128"/>
+      <entries _body=",255,0,128,192"/>
+      <entries _body=",255,128,128,192"/>
+      <entries _body=",255,255,0,255"/>
+      <entries _body=",255,128,64,64"/>
+      <entries _body=",255,255,128,64"/>
+      <entries _body=",255,80,240,120"/>
+      <entries _body=",255,0,64,128"/>
+      <entries _body=",255,128,0,64"/>
+      <entries _body=",255,255,0,128"/>
+      <entries _body=",255,128,128,64"/>
+      <entries _body=",255,128,128,128"/>
+      <entries _body=",255,255,128,255"/>
+      <entries _body=",255,0,64,0"/>
+      <entries _body=",255,0,0,0"/>
+      <entries _body=",255,255,255,255"/>
+      <entries _body=",255,255,128,0"/>
+     </seriesPalette>
+     <series _type="LineSeries" stacked="false" translucent="false">
+      <label>
+       <background _nil="1"/>
+       <outline>
+        <color _nil="1"/>
+       </outline>
+      </label>
+      <dataDefinition definition="row[&quot;ASR&quot;]">
+       <grouping/>
+      </dataDefinition>
+      <dataPoint separator=", ">
+       <components type="1"/>
+      </dataPoint>
+      <triggers condition="6">
+       <action type="1">
+        <value _type="TooltipValue" text="" delay="200"/>
+       </action>
+      </triggers>
+      <curveFitting _nil="1"/>
+      <markers visible="false">
+       <outline/>
+      </markers>
+      <lineAttributes thickness="3">
+       <color _nil="1"/>
+      </lineAttributes>
+     </series>
+    </seriesDefinitions>
+    <lineAttributes visible="false">
+     <color _body=",255,192,192,192"/>
+    </lineAttributes>
+    <label visible="false">
+     <background _nil="1"/>
+     <outline>
+      <color _nil="1"/>
+     </outline>
+    </label>
+    <majorGrid>
+     <lineAttributes>
+      <color _nil="1"/>
+     </lineAttributes>
+     <tickAttributes visible="false">
+      <color _nil="1"/>
+     </tickAttributes>
+    </majorGrid>
+    <minorGrid>
+     <lineAttributes>
+      <color _nil="1"/>
+     </lineAttributes>
+     <tickAttributes>
+      <color _nil="1"/>
+     </tickAttributes>
+    </minorGrid>
+    <origin>
+     <value _nil="1"/>
+    </origin>
+   </associatedAxes>
+   <seriesDefinitions>
+    <query definition=""/>
+    <seriesPalette>
+     <entries _body=",255,255,255,255"/>
+     <entries _body=",255,242,88,106"/>
+     <entries _body=",255,232,172,57"/>
+     <entries _body=",255,255,102,0"/>
+     <entries _body=",255,64,128,128"/>
+     <entries _body=",255,128,128,192"/>
+     <entries _body=",255,170,85,85"/>
+     <entries _body=",255,128,128,0"/>
+     <entries _body=",255,192,192,192"/>
+     <entries _body=",255,255,255,128"/>
+     <entries _body=",255,128,192,128"/>
+     <entries _body=",255,7,146,94"/>
+     <entries _body=",255,0,128,255"/>
+     <entries _body=",255,255,128,192"/>
+     <entries _body=",255,0,255,255"/>
+     <entries _body=",255,255,128,128"/>
+     <entries _body=",255,0,128,192"/>
+     <entries _body=",255,128,128,192"/>
+     <entries _body=",255,255,0,255"/>
+     <entries _body=",255,128,64,64"/>
+     <entries _body=",255,255,128,64"/>
+     <entries _body=",255,80,240,120"/>
+     <entries _body=",255,0,64,128"/>
+     <entries _body=",255,128,0,64"/>
+     <entries _body=",255,255,0,128"/>
+     <entries _body=",255,128,128,64"/>
+     <entries _body=",255,128,128,128"/>
+     <entries _body=",255,255,128,255"/>
+     <entries _body=",255,0,64,0"/>
+     <entries _body=",255,0,0,0"/>
+     <entries _body=",255,255,255,255"/>
+     <entries _body=",255,255,128,0"/>
+    </seriesPalette>
+    <series seriesIdentifier="">
+     <label>
+      <background _nil="1"/>
+      <outline>
+       <color _nil="1"/>
+      </outline>
+     </label>
+     <dataDefinition definition="row[&quot;hour_of_day&quot;]"/>
+     <dataPoint separator=", ">
+      <components type="1"/>
+     </dataPoint>
+     <curveFitting _nil="1"/>
+    </series>
+    <grouping enabled="true" groupType="0"/>
+    <sortKey/>
+   </seriesDefinitions>
+   <lineAttributes visible="false">
+    <color _body=",255,192,192,192"/>
+   </lineAttributes>
+   <label visible="false">
+    <caption>
+     <font rotation="45.0"/>
+    </caption>
+    <background _nil="1"/>
+    <outline>
+     <color _nil="1"/>
+    </outline>
+   </label>
+   <majorGrid>
+    <lineAttributes>
+     <color _nil="1"/>
+    </lineAttributes>
+    <tickAttributes visible="false">
+     <color _nil="1"/>
+    </tickAttributes>
+   </majorGrid>
+   <minorGrid>
+    <lineAttributes>
+     <color _nil="1"/>
+    </lineAttributes>
+    <tickAttributes>
+     <color _nil="1"/>
+    </tickAttributes>
+   </minorGrid>
+   <origin>
+    <value _nil="1"/>
+   </origin>
+  </axes>
+  <rotation>
+   <angles/>
+  </rotation>
+ </ChartWithAxes>
 </ActuateChart>
 ]]></xml-property>
-                            <property name="inheritColumns">false</property>
-                            <property name="height">0.875in</property>
-                            <property name="width">1.8645833333333333in</property>
+                            <property name="outputFormat">JS</property>
+                            <property name="inheritColumns">true</property>
+                            <property name="height">0.9270833333333334in</property>
+                            <property name="width">1.9479166666666667in</property>
                         </extended-item>
                     </cell>
                 </row>
