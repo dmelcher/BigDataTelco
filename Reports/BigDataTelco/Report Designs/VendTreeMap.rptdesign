@@ -1,0 +1,603 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<report xmlns="http://www.eclipse.org/birt/2005/design" version="3.2.23" id="1">
+    <property name="createdBy">Eclipse BIRT Designer Version 3.7.2.v20120817-1705 Build &lt;3.7.2.v20120817-1705></property>
+    <property name="units">in</property>
+    <method name="beforeFactory"><![CDATA[vars["gDataXML"] = "[['Location', 'Parent', 'Attempts (size)', 'ASR increase/decrease (color)']," 
+vars["gDataXML"] += "['USA', null, 0,  0]";
+]]></method>
+    <property name="iconFile">/templates/blank_report.gif</property>
+    <property name="bidiLayoutOrientation">ltr</property>
+    <property name="imageDPI">96</property>
+    <list-property name="libraries">
+        <structure>
+            <property name="fileName">/ThemesReportItems.rptlibrary</property>
+            <property name="namespace">ThemesReportItems</property>
+        </structure>
+    </list-property>
+    <data-sources>
+        <oda-data-source extensionID="org.eclipse.birt.report.data.oda.jdbc" name="Data Source" id="7">
+            <list-property name="privateDriverProperties">
+                <ex-property>
+                    <name>metadataBidiFormatStr</name>
+                    <value>ILYNN</value>
+                </ex-property>
+                <ex-property>
+                    <name>disabledMetadataBidiFormatStr</name>
+                </ex-property>
+                <ex-property>
+                    <name>contentBidiFormatStr</name>
+                    <value>ILYNN</value>
+                </ex-property>
+                <ex-property>
+                    <name>disabledContentBidiFormatStr</name>
+                </ex-property>
+            </list-property>
+            <property name="odaDriverClass">com.mysql.jdbc.Driver</property>
+            <property name="odaURL">jdbc:mysql://localhost:5029/cdr</property>
+            <property name="odaUser">root</property>
+        </oda-data-source>
+    </data-sources>
+    <data-sets>
+        <oda-data-set extensionID="org.eclipse.birt.report.data.oda.jdbc.JdbcSelectDataSet" name="Data Set" id="8">
+            <list-property name="columnHints">
+                <structure>
+                    <property name="columnName">state</property>
+                    <property name="analysis">dimension</property>
+                    <text-property name="displayName">state</text-property>
+                    <text-property name="heading">state</text-property>
+                </structure>
+                <structure>
+                    <property name="columnName">vendor_trunk_id</property>
+                    <property name="analysis">measure</property>
+                    <text-property name="displayName">vendor_trunk_id</text-property>
+                    <text-property name="heading">vendor_trunk_id</text-property>
+                </structure>
+                <structure>
+                    <property name="columnName">avgLatitude</property>
+                    <property name="analysis">measure</property>
+                    <text-property name="displayName">avgLatitude</text-property>
+                    <text-property name="heading">avgLatitude</text-property>
+                </structure>
+                <structure>
+                    <property name="columnName">avgLongitude</property>
+                    <property name="analysis">measure</property>
+                    <text-property name="displayName">avgLongitude</text-property>
+                    <text-property name="heading">avgLongitude</text-property>
+                </structure>
+                <structure>
+                    <property name="columnName">attempts</property>
+                    <property name="analysis">measure</property>
+                    <text-property name="displayName">attempts</text-property>
+                    <text-property name="heading">attempts</text-property>
+                </structure>
+                <structure>
+                    <property name="columnName">connects</property>
+                    <property name="analysis">measure</property>
+                    <text-property name="displayName">connects</text-property>
+                    <text-property name="heading">connects</text-property>
+                </structure>
+                <structure>
+                    <property name="columnName">ASR</property>
+                    <property name="analysis">measure</property>
+                    <text-property name="displayName">ASR</text-property>
+                    <text-property name="heading">ASR</text-property>
+                </structure>
+            </list-property>
+            <list-property name="parameters"/>
+            <structure name="cachedMetaData">
+                <list-property name="resultSet">
+                    <structure>
+                        <property name="position">1</property>
+                        <property name="name">state</property>
+                        <property name="dataType">string</property>
+                    </structure>
+                    <structure>
+                        <property name="position">2</property>
+                        <property name="name">vendor_trunk_id</property>
+                        <property name="dataType">integer</property>
+                    </structure>
+                    <structure>
+                        <property name="position">3</property>
+                        <property name="name">avgLatitude</property>
+                        <property name="dataType">float</property>
+                    </structure>
+                    <structure>
+                        <property name="position">4</property>
+                        <property name="name">avgLongitude</property>
+                        <property name="dataType">float</property>
+                    </structure>
+                    <structure>
+                        <property name="position">5</property>
+                        <property name="name">attempts</property>
+                        <property name="dataType">decimal</property>
+                    </structure>
+                    <structure>
+                        <property name="position">6</property>
+                        <property name="name">connects</property>
+                        <property name="dataType">decimal</property>
+                    </structure>
+                    <structure>
+                        <property name="position">7</property>
+                        <property name="name">ASR</property>
+                        <property name="dataType">decimal</property>
+                    </structure>
+                </list-property>
+            </structure>
+            <property name="dataSource">Data Source</property>
+            <list-property name="resultSet">
+                <structure>
+                    <property name="position">1</property>
+                    <property name="name">state</property>
+                    <property name="nativeName">state</property>
+                    <property name="dataType">string</property>
+                    <property name="nativeDataType">12</property>
+                </structure>
+                <structure>
+                    <property name="position">2</property>
+                    <property name="name">vendor_trunk_id</property>
+                    <property name="nativeName">vendor_trunk_id</property>
+                    <property name="dataType">integer</property>
+                    <property name="nativeDataType">4</property>
+                </structure>
+                <structure>
+                    <property name="position">3</property>
+                    <property name="name">avgLatitude</property>
+                    <property name="nativeName">avgLatitude</property>
+                    <property name="dataType">float</property>
+                    <property name="nativeDataType">8</property>
+                </structure>
+                <structure>
+                    <property name="position">4</property>
+                    <property name="name">avgLongitude</property>
+                    <property name="nativeName">avgLongitude</property>
+                    <property name="dataType">float</property>
+                    <property name="nativeDataType">8</property>
+                </structure>
+                <structure>
+                    <property name="position">5</property>
+                    <property name="name">attempts</property>
+                    <property name="nativeName">attempts</property>
+                    <property name="dataType">decimal</property>
+                    <property name="nativeDataType">3</property>
+                </structure>
+                <structure>
+                    <property name="position">6</property>
+                    <property name="name">connects</property>
+                    <property name="nativeName">connects</property>
+                    <property name="dataType">decimal</property>
+                    <property name="nativeDataType">3</property>
+                </structure>
+                <structure>
+                    <property name="position">7</property>
+                    <property name="name">ASR</property>
+                    <property name="nativeName">ASR</property>
+                    <property name="dataType">decimal</property>
+                    <property name="nativeDataType">3</property>
+                </structure>
+            </list-property>
+            <xml-property name="queryText"><![CDATA[select
+    state, vendor_trunk_id,
+    avg(g.latitude) as 'avgLatitude',
+    avg(g.longitude) as 'avgLongitude',
+    sum(grp_cnt) as 'attempts',
+    sum(connect_sum) as 'connects',
+    sum(connect_sum)/sum(grp_cnt) as 'ASR'
+from cdr_fact_agg f
+inner join vendor_dim v on v.vendor_dim_id = f.vendor_id
+inner join geography_dim g on g.geo_id = f.geo_id
+inner join date_dim d on d.date_id = f.date_id
+inner join time_dim t on t.time_id = f.time_id
+where
+    g.country_name = 'United States' and
+    d.date = '2011-10-10' and
+    t.time_window >= '14:00:00.0' and
+    t.time_window < '14:30:00.0'
+group by
+    state, vendor_trunk_id
+order by
+    state, vendor_trunk_id]]></xml-property>
+            <xml-property name="designerValues"><![CDATA[<?xml version="1.0" encoding="UTF-8"?>
+<model:DesignValues xmlns:design="http://www.eclipse.org/datatools/connectivity/oda/design" xmlns:model="http://www.eclipse.org/birt/report/model/adapter/odaModel">
+  <Version>2.0</Version>
+  <design:ResultSets derivedMetaData="true">
+    <design:resultSetDefinitions>
+      <design:resultSetColumns>
+        <design:resultColumnDefinitions>
+          <design:attributes>
+            <design:identifier>
+              <design:name>npa</design:name>
+              <design:position>1</design:position>
+            </design:identifier>
+            <design:nativeDataTypeCode>12</design:nativeDataTypeCode>
+            <design:precision>3</design:precision>
+            <design:scale>0</design:scale>
+            <design:nullability>Nullable</design:nullability>
+            <design:uiHints>
+              <design:displayName>NPA</design:displayName>
+            </design:uiHints>
+          </design:attributes>
+          <design:usageHints>
+            <design:label>NPA</design:label>
+            <design:formattingHints>
+              <design:displaySize>3</design:displaySize>
+            </design:formattingHints>
+          </design:usageHints>
+        </design:resultColumnDefinitions>
+        <design:resultColumnDefinitions>
+          <design:attributes>
+            <design:identifier>
+              <design:name>avg(g.latitude)</design:name>
+              <design:position>2</design:position>
+            </design:identifier>
+            <design:nativeDataTypeCode>8</design:nativeDataTypeCode>
+            <design:precision>26</design:precision>
+            <design:scale>31</design:scale>
+            <design:nullability>Nullable</design:nullability>
+            <design:uiHints>
+              <design:displayName>avg(g.latitude)</design:displayName>
+            </design:uiHints>
+          </design:attributes>
+          <design:usageHints>
+            <design:label>avg(g.latitude)</design:label>
+            <design:formattingHints>
+              <design:displaySize>26</design:displaySize>
+            </design:formattingHints>
+          </design:usageHints>
+        </design:resultColumnDefinitions>
+        <design:resultColumnDefinitions>
+          <design:attributes>
+            <design:identifier>
+              <design:name>avg(g.longitude)</design:name>
+              <design:position>3</design:position>
+            </design:identifier>
+            <design:nativeDataTypeCode>8</design:nativeDataTypeCode>
+            <design:precision>26</design:precision>
+            <design:scale>31</design:scale>
+            <design:nullability>Nullable</design:nullability>
+            <design:uiHints>
+              <design:displayName>avg(g.longitude)</design:displayName>
+            </design:uiHints>
+          </design:attributes>
+          <design:usageHints>
+            <design:label>avg(g.longitude)</design:label>
+            <design:formattingHints>
+              <design:displaySize>26</design:displaySize>
+            </design:formattingHints>
+          </design:usageHints>
+        </design:resultColumnDefinitions>
+        <design:resultColumnDefinitions>
+          <design:attributes>
+            <design:identifier>
+              <design:name>attempts</design:name>
+              <design:position>4</design:position>
+            </design:identifier>
+            <design:nativeDataTypeCode>3</design:nativeDataTypeCode>
+            <design:precision>32</design:precision>
+            <design:scale>0</design:scale>
+            <design:nullability>Nullable</design:nullability>
+            <design:uiHints>
+              <design:displayName>attempts</design:displayName>
+            </design:uiHints>
+          </design:attributes>
+          <design:usageHints>
+            <design:label>attempts</design:label>
+            <design:formattingHints>
+              <design:displaySize>33</design:displaySize>
+            </design:formattingHints>
+          </design:usageHints>
+        </design:resultColumnDefinitions>
+        <design:resultColumnDefinitions>
+          <design:attributes>
+            <design:identifier>
+              <design:name>connects</design:name>
+              <design:position>5</design:position>
+            </design:identifier>
+            <design:nativeDataTypeCode>3</design:nativeDataTypeCode>
+            <design:precision>32</design:precision>
+            <design:scale>0</design:scale>
+            <design:nullability>Nullable</design:nullability>
+            <design:uiHints>
+              <design:displayName>connects</design:displayName>
+            </design:uiHints>
+          </design:attributes>
+          <design:usageHints>
+            <design:label>connects</design:label>
+            <design:formattingHints>
+              <design:displaySize>33</design:displaySize>
+            </design:formattingHints>
+          </design:usageHints>
+        </design:resultColumnDefinitions>
+        <design:resultColumnDefinitions>
+          <design:attributes>
+            <design:identifier>
+              <design:name>ASR</design:name>
+              <design:position>6</design:position>
+            </design:identifier>
+            <design:nativeDataTypeCode>3</design:nativeDataTypeCode>
+            <design:precision>36</design:precision>
+            <design:scale>4</design:scale>
+            <design:nullability>Nullable</design:nullability>
+            <design:uiHints>
+              <design:displayName>ASR</design:displayName>
+            </design:uiHints>
+          </design:attributes>
+          <design:usageHints>
+            <design:label>ASR</design:label>
+            <design:formattingHints>
+              <design:displaySize>38</design:displaySize>
+            </design:formattingHints>
+          </design:usageHints>
+        </design:resultColumnDefinitions>
+      </design:resultSetColumns>
+      <design:criteria/>
+    </design:resultSetDefinitions>
+  </design:ResultSets>
+</model:DesignValues>]]></xml-property>
+        </oda-data-set>
+    </data-sets>
+    <styles>
+        <style name="report" id="4">
+            <property name="fontFamily">sans-serif</property>
+            <property name="fontSize">10pt</property>
+        </style>
+        <style name="crosstab-cell" id="5">
+            <property name="borderBottomColor">#CCCCCC</property>
+            <property name="borderBottomStyle">solid</property>
+            <property name="borderBottomWidth">1pt</property>
+            <property name="borderLeftColor">#CCCCCC</property>
+            <property name="borderLeftStyle">solid</property>
+            <property name="borderLeftWidth">1pt</property>
+            <property name="borderRightColor">#CCCCCC</property>
+            <property name="borderRightStyle">solid</property>
+            <property name="borderRightWidth">1pt</property>
+            <property name="borderTopColor">#CCCCCC</property>
+            <property name="borderTopStyle">solid</property>
+            <property name="borderTopWidth">1pt</property>
+        </style>
+        <style name="crosstab" id="6">
+            <property name="borderBottomColor">#CCCCCC</property>
+            <property name="borderBottomStyle">solid</property>
+            <property name="borderBottomWidth">1pt</property>
+            <property name="borderLeftColor">#CCCCCC</property>
+            <property name="borderLeftStyle">solid</property>
+            <property name="borderLeftWidth">1pt</property>
+            <property name="borderRightColor">#CCCCCC</property>
+            <property name="borderRightStyle">solid</property>
+            <property name="borderRightWidth">1pt</property>
+            <property name="borderTopColor">#CCCCCC</property>
+            <property name="borderTopStyle">solid</property>
+            <property name="borderTopWidth">1pt</property>
+        </style>
+    </styles>
+    <page-setup>
+        <simple-master-page name="Simple MasterPage" id="2">
+            <page-footer>
+                <text id="3">
+                    <property name="contentType">html</property>
+                    <text-property name="content"><![CDATA[<value-of>new Date()</value-of>]]></text-property>
+                </text>
+            </page-footer>
+        </simple-master-page>
+    </page-setup>
+    <body>
+        <table id="166">
+            <list-property name="userProperties">
+                <structure>
+                    <property name="name">__ac_group_collapse_level</property>
+                    <property name="type">string</property>
+                </structure>
+            </list-property>
+            <property name="dataSet">Data Set</property>
+            <property name="theme">ThemesReportItems.default-table</property>
+            <list-property name="visibility">
+                <structure>
+                    <property name="format">all</property>
+                    <expression name="valueExpr" type="javascript">true</expression>
+                </structure>
+            </list-property>
+            <list-property name="boundDataColumns">
+                <structure>
+                    <property name="name">state</property>
+                    <text-property name="displayName">state</text-property>
+                    <expression name="expression" type="javascript">dataSetRow["state"]</expression>
+                    <property name="dataType">string</property>
+                </structure>
+                <structure>
+                    <property name="name">vendor_trunk_id</property>
+                    <text-property name="displayName">vendor_trunk_id</text-property>
+                    <expression name="expression" type="javascript">dataSetRow["vendor_trunk_id"]</expression>
+                    <property name="dataType">integer</property>
+                </structure>
+                <structure>
+                    <property name="name">avgLatitude</property>
+                    <text-property name="displayName">avgLatitude</text-property>
+                    <expression name="expression" type="javascript">dataSetRow["avgLatitude"]</expression>
+                    <property name="dataType">float</property>
+                </structure>
+                <structure>
+                    <property name="name">avgLongitude</property>
+                    <text-property name="displayName">avgLongitude</text-property>
+                    <expression name="expression" type="javascript">dataSetRow["avgLongitude"]</expression>
+                    <property name="dataType">float</property>
+                </structure>
+                <structure>
+                    <property name="name">attempts</property>
+                    <text-property name="displayName">attempts</text-property>
+                    <expression name="expression" type="javascript">dataSetRow["attempts"]</expression>
+                    <property name="dataType">decimal</property>
+                </structure>
+                <structure>
+                    <property name="name">connects</property>
+                    <text-property name="displayName">connects</text-property>
+                    <expression name="expression" type="javascript">dataSetRow["connects"]</expression>
+                    <property name="dataType">decimal</property>
+                </structure>
+                <structure>
+                    <property name="name">ASR</property>
+                    <text-property name="displayName">ASR</text-property>
+                    <expression name="expression" type="javascript">dataSetRow["ASR"]</expression>
+                    <property name="dataType">decimal</property>
+                </structure>
+            </list-property>
+            <column id="200"/>
+            <column id="201"/>
+            <column id="202"/>
+            <column id="203"/>
+            <column id="204"/>
+            <column id="205"/>
+            <header>
+                <row id="167">
+                    <cell id="168">
+                        <label id="169">
+                            <text-property name="text">vendor</text-property>
+                        </label>
+                    </cell>
+                    <cell id="170">
+                        <label id="171">
+                            <text-property name="text">avgLatitude</text-property>
+                        </label>
+                    </cell>
+                    <cell id="172">
+                        <label id="173">
+                            <text-property name="text">avgLongitude</text-property>
+                        </label>
+                    </cell>
+                    <cell id="174">
+                        <label id="175">
+                            <text-property name="text">attempts</text-property>
+                        </label>
+                    </cell>
+                    <cell id="176">
+                        <label id="177">
+                            <text-property name="text">connects</text-property>
+                        </label>
+                    </cell>
+                    <cell id="178">
+                        <label id="179">
+                            <text-property name="text">ASR</text-property>
+                        </label>
+                    </cell>
+                </row>
+            </header>
+            <group id="239">
+                <property name="groupName">StateGroup</property>
+                <expression name="keyExpr" type="javascript">row["state"]</expression>
+                <structure name="toc">
+                    <expression name="expressionValue" type="javascript">row["state"]</expression>
+                </structure>
+                <property name="hideDetail">false</property>
+                <header>
+                    <row id="240">
+                        <method name="onCreate"><![CDATA[vars["gDataXML"] += ",['" + this.getRowData().getColumnValue("state") + "', 'USA', 0, 0]";]]></method>
+                        <cell id="241">
+                            <data id="254">
+                                <property name="resultSetColumn">state</property>
+                            </data>
+                        </cell>
+                        <cell id="242"/>
+                        <cell id="243"/>
+                        <cell id="244"/>
+                        <cell id="245"/>
+                        <cell id="246"/>
+                    </row>
+                </header>
+                <footer>
+                    <row id="247">
+                        <cell id="248"/>
+                        <cell id="249"/>
+                        <cell id="250"/>
+                        <cell id="251"/>
+                        <cell id="252"/>
+                        <cell id="253"/>
+                    </row>
+                </footer>
+            </group>
+            <detail>
+                <row id="180">
+                    <method name="onCreate"><![CDATA[vars["gDataXML"] += ",['" + this.getRowData().getColumnValue("vendor_trunk_id") + " (ASR = " + this.getRowData().getColumnValue("ASR") + " Attempts = " + this.getRowData().getColumnValue("attempts") + " State = " + this.getRowData().getColumnValue("state") + ")', '" + this.getRowData().getColumnValue("state") + "', " + this.getRowData().getColumnValue("attempts") + ", " + this.getRowData().getColumnValue("ASR") + "]";]]></method>
+                    <cell id="181">
+                        <data id="255">
+                            <property name="resultSetColumn">vendor_trunk_id</property>
+                        </data>
+                    </cell>
+                    <cell id="183">
+                        <data id="184">
+                            <property name="resultSetColumn">avgLatitude</property>
+                        </data>
+                    </cell>
+                    <cell id="185">
+                        <data id="186">
+                            <property name="resultSetColumn">avgLongitude</property>
+                        </data>
+                    </cell>
+                    <cell id="187">
+                        <data id="188">
+                            <property name="resultSetColumn">attempts</property>
+                        </data>
+                    </cell>
+                    <cell id="189">
+                        <data id="190">
+                            <property name="resultSetColumn">connects</property>
+                        </data>
+                    </cell>
+                    <cell id="191">
+                        <data id="192">
+                            <property name="resultSetColumn">ASR</property>
+                        </data>
+                    </cell>
+                </row>
+            </detail>
+            <footer>
+                <row id="193">
+                    <cell id="194"/>
+                    <cell id="195"/>
+                    <cell id="196"/>
+                    <cell id="197"/>
+                    <cell id="198"/>
+                    <cell id="199"/>
+                </row>
+            </footer>
+        </table>
+        <label id="164">
+            <property name="fontFamily">"Arial"</property>
+            <property name="color">gray</property>
+            <text-property name="text">Click to drill down, RMB to drill up, Size - 2012 Medal Count, Color - Difference from 2008</text-property>
+        </label>
+        <text id="163">
+            <property name="contentType">html</property>
+            <text-property name="content"><![CDATA[<div id="visualization" style="boder:1px solid red;width: 600px; height: 400px;"></div>
+  
+<script type="text/javascript" src="http://www.google.com/jsapi"></script>
+
+<script type="text/javascript">    
+	var gDataXML = <VALUE-OF>vars["gDataXML"]</VALUE-OF>];
+function drawVisualization() {
+	
+	// Create and populate the data table.	
+	var data = google.visualization.arrayToDataTable(gDataXML);        
+	
+	// Create and draw the visualization.	
+	var treemap = new google.visualization.TreeMap(document.getElementById('visualization'));
+	treemap.draw(data, {
+		minColor: 'red',
+		midColor: '#ddd',
+		maxColor: '#0d0',
+		headerHeight: 15,
+		fontColor: 'black',
+		showTooltips: true,
+    	showScale: true
+    });
+}      
+
+google.setOnLoadCallback(drawVisualization);
+google.load('visualization', '1', {packages: ['treemap']});
+</script>]]></text-property>
+        </text>
+    </body>
+    <property name="pageVariables">
+        <variable-element name="gDataXML">
+            <expression name="value" type="javascript">""</expression>
+            <property name="type">report</property>
+        </variable-element>
+    </property>
+</report>
