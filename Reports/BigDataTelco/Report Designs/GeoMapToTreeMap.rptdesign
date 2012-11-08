@@ -182,8 +182,6 @@
     sum(connect_sum)/sum(grp_cnt) as 'ASR'
 from test_fact_agg f
 inner join geography_dim g on g.geo_id = f.geo_id
-inner join date_dim d on d.date_id = f.date_id
-inner join time_dim t on t.time_id = f.time_id
 where
     country_name = 'United States'
 group by
