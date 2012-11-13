@@ -13,31 +13,221 @@
     </list-property>
     <parameters>
         <scalar-parameter name="pDateBeg" id="31">
-            <text-property name="promptText">Enter Beg Date</text-property>
+            <text-property name="promptText">Select Begin Date</text-property>
             <property name="valueType">static</property>
-            <property name="dataType">string</property>
+            <property name="sortBy">value</property>
+            <property name="sortDirection">asc</property>
+            <property name="dataType">date</property>
             <property name="distinct">true</property>
             <simple-property-list name="defaultValue">
                 <value type="constant">2011-10-01</value>
             </simple-property-list>
-            <list-property name="selectionList"/>
+            <list-property name="selectionList">
+                <structure>
+                    <property name="value">2011-10-01</property>
+                </structure>
+                <structure>
+                    <property name="value">2011-10-02</property>
+                </structure>
+                <structure>
+                    <property name="value">2011-10-03</property>
+                </structure>
+                <structure>
+                    <property name="value">2011-10-04</property>
+                </structure>
+                <structure>
+                    <property name="value">2011-10-05</property>
+                </structure>
+                <structure>
+                    <property name="value">2011-10-06</property>
+                </structure>
+                <structure>
+                    <property name="value">2011-10-07</property>
+                </structure>
+                <structure>
+                    <property name="value">2011-10-08</property>
+                </structure>
+                <structure>
+                    <property name="value">2011-10-09</property>
+                </structure>
+                <structure>
+                    <property name="value">2011-10-10</property>
+                </structure>
+                <structure>
+                    <property name="value">2011-10-21</property>
+                </structure>
+                <structure>
+                    <property name="value">2011-10-22</property>
+                </structure>
+                <structure>
+                    <property name="value">2011-10-23</property>
+                </structure>
+                <structure>
+                    <property name="value">2011-10-24</property>
+                </structure>
+                <structure>
+                    <property name="value">2011-10-25</property>
+                </structure>
+                <structure>
+                    <property name="value">2011-10-26</property>
+                </structure>
+                <structure>
+                    <property name="value">2011-10-27</property>
+                </structure>
+                <structure>
+                    <property name="value">2011-10-28</property>
+                </structure>
+                <structure>
+                    <property name="value">2011-10-29</property>
+                </structure>
+                <structure>
+                    <property name="value">2011-10-30</property>
+                </structure>
+                <structure>
+                    <property name="value">2011-10-31</property>
+                </structure>
+                <structure>
+                    <property name="value">2011-10-11</property>
+                </structure>
+                <structure>
+                    <property name="value">2011-10-12</property>
+                </structure>
+                <structure>
+                    <property name="value">2011-10-13</property>
+                </structure>
+                <structure>
+                    <property name="value">2011-10-14</property>
+                </structure>
+                <structure>
+                    <property name="value">2011-10-15</property>
+                </structure>
+                <structure>
+                    <property name="value">2011-10-16</property>
+                </structure>
+                <structure>
+                    <property name="value">2011-10-17</property>
+                </structure>
+                <structure>
+                    <property name="value">2011-10-18</property>
+                </structure>
+                <structure>
+                    <property name="value">2011-10-19</property>
+                </structure>
+            </list-property>
             <property name="paramType">simple</property>
-            <property name="controlType">text-box</property>
+            <property name="controlType">list-box</property>
+            <property name="mustMatch">true</property>
+            <property name="fixedOrder">false</property>
             <structure name="format">
                 <property name="category">Unformatted</property>
             </structure>
         </scalar-parameter>
-        <scalar-parameter name="pDateEnd" id="32">
-            <text-property name="promptText">Enter End Date</text-property>
+        <scalar-parameter name="pDateEnd" id="38">
+            <text-property name="promptText">Select End Date</text-property>
             <property name="valueType">static</property>
-            <property name="dataType">string</property>
+            <property name="sortBy">value</property>
+            <property name="sortDirection">asc</property>
+            <property name="dataType">date</property>
             <property name="distinct">true</property>
             <simple-property-list name="defaultValue">
-                <value type="constant">2011-10-19</value>
+                <value type="constant">2011-10-02</value>
             </simple-property-list>
-            <list-property name="selectionList"/>
+            <list-property name="selectionList">
+                <structure>
+                    <property name="value">2011-10-01</property>
+                </structure>
+                <structure>
+                    <property name="value">2011-10-02</property>
+                </structure>
+                <structure>
+                    <property name="value">2011-10-03</property>
+                </structure>
+                <structure>
+                    <property name="value">2011-10-04</property>
+                </structure>
+                <structure>
+                    <property name="value">2011-10-05</property>
+                </structure>
+                <structure>
+                    <property name="value">2011-10-06</property>
+                </structure>
+                <structure>
+                    <property name="value">2011-10-07</property>
+                </structure>
+                <structure>
+                    <property name="value">2011-10-08</property>
+                </structure>
+                <structure>
+                    <property name="value">2011-10-09</property>
+                </structure>
+                <structure>
+                    <property name="value">2011-10-10</property>
+                </structure>
+                <structure>
+                    <property name="value">2011-10-21</property>
+                </structure>
+                <structure>
+                    <property name="value">2011-10-22</property>
+                </structure>
+                <structure>
+                    <property name="value">2011-10-23</property>
+                </structure>
+                <structure>
+                    <property name="value">2011-10-24</property>
+                </structure>
+                <structure>
+                    <property name="value">2011-10-25</property>
+                </structure>
+                <structure>
+                    <property name="value">2011-10-26</property>
+                </structure>
+                <structure>
+                    <property name="value">2011-10-27</property>
+                </structure>
+                <structure>
+                    <property name="value">2011-10-28</property>
+                </structure>
+                <structure>
+                    <property name="value">2011-10-29</property>
+                </structure>
+                <structure>
+                    <property name="value">2011-10-30</property>
+                </structure>
+                <structure>
+                    <property name="value">2011-10-31</property>
+                </structure>
+                <structure>
+                    <property name="value">2011-10-11</property>
+                </structure>
+                <structure>
+                    <property name="value">2011-10-12</property>
+                </structure>
+                <structure>
+                    <property name="value">2011-10-13</property>
+                </structure>
+                <structure>
+                    <property name="value">2011-10-14</property>
+                </structure>
+                <structure>
+                    <property name="value">2011-10-15</property>
+                </structure>
+                <structure>
+                    <property name="value">2011-10-16</property>
+                </structure>
+                <structure>
+                    <property name="value">2011-10-17</property>
+                </structure>
+                <structure>
+                    <property name="value">2011-10-18</property>
+                </structure>
+                <structure>
+                    <property name="value">2011-10-19</property>
+                </structure>
+            </list-property>
             <property name="paramType">simple</property>
-            <property name="controlType">text-box</property>
+            <property name="controlType">list-box</property>
+            <property name="mustMatch">true</property>
+            <property name="fixedOrder">false</property>
             <structure name="format">
                 <property name="category">Unformatted</property>
             </structure>
@@ -268,6 +458,9 @@ group by
     </styles>
     <page-setup>
         <simple-master-page name="Simple MasterPage" id="2">
+            <property name="type">custom</property>
+            <property name="height">960px</property>
+            <property name="width">1400px</property>
             <property name="backgroundColor">#004080</property>
             <page-footer>
                 <text id="3">
@@ -377,9 +570,9 @@ group by
       <grouping/>
      </query>
      <seriesPalette>
-      <entries _body=",255,255,255,0"/>
+      <entries _body=",255,255,204,0"/>
       <entries _body=",255,198,0,0"/>
-      <entries _body=",255,154,204,0"/>
+      <entries _body=",255,0,217,0"/>
       <entries _body=",255,128,255,128"/>
       <entries _body=",255,64,128,128"/>
       <entries _body=",255,128,128,192"/>
@@ -444,7 +637,7 @@ group by
        </action>
       </triggers>
       <curveFitting _nil="1"/>
-      <markers type="3" visible="true">
+      <markers type="3" size="5" visible="true">
        <outline visible="true"/>
       </markers>
       <lineAttributes>
@@ -613,7 +806,7 @@ group by
                         <property name="inheritColumns">true</property>
                         <property name="dataSet">Data Set</property>
                         <property name="height">5.016666666666667in</property>
-                        <property name="width">7.966666666666667in</property>
+                        <property name="width">13.885416666666666in</property>
                         <list-property name="boundDataColumns">
                             <structure>
                                 <property name="name">vendor_trunk_id</property>

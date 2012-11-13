@@ -716,7 +716,6 @@ order by hour_of_day;]]></xml-property>
 ]]></xml-property>
                             <property name="outputFormat">JS</property>
                             <property name="inheritColumns">true</property>
-                            <expression name="bookmark" type="javascript">"chart"</expression>
                             <property name="height">3.59375in</property>
                             <property name="width">7.885416666666667in</property>
                         </extended-item>

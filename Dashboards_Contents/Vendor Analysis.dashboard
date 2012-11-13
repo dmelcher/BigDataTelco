@@ -1,0 +1,261 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<report xmlns="http://www.eclipse.org/birt/2005/design" version="3.2.23" id="1">
+    <property name="layoutPreference">auto layout</property>
+    <list-property name="libraries">
+        <structure>
+            <property name="fileName">ThemesReportItems.rptlibrary</property>
+            <property name="namespace">ThemesReportItems</property>
+        </structure>
+    </list-property>
+    <styles>
+        <style name="crosstab-cell" id="2">
+            <property name="borderBottomColor">#CCCCCC</property>
+            <property name="borderBottomStyle">solid</property>
+            <property name="borderBottomWidth">1pt</property>
+            <property name="borderLeftColor">#CCCCCC</property>
+            <property name="borderLeftStyle">solid</property>
+            <property name="borderLeftWidth">1pt</property>
+            <property name="borderRightColor">#CCCCCC</property>
+            <property name="borderRightStyle">solid</property>
+            <property name="borderRightWidth">1pt</property>
+            <property name="borderTopColor">#CCCCCC</property>
+            <property name="borderTopStyle">solid</property>
+            <property name="borderTopWidth">1pt</property>
+        </style>
+        <style name="crosstab" id="3">
+            <property name="borderBottomColor">#CCCCCC</property>
+            <property name="borderBottomStyle">solid</property>
+            <property name="borderBottomWidth">1pt</property>
+            <property name="borderLeftColor">#CCCCCC</property>
+            <property name="borderLeftStyle">solid</property>
+            <property name="borderLeftWidth">1pt</property>
+            <property name="borderRightColor">#CCCCCC</property>
+            <property name="borderRightStyle">solid</property>
+            <property name="borderRightWidth">1pt</property>
+            <property name="borderTopColor">#CCCCCC</property>
+            <property name="borderTopStyle">solid</property>
+            <property name="borderTopWidth">1pt</property>
+        </style>
+    </styles>
+    <body>
+        <text name="f5c905d8-9a67-4bfb-93ac-718cc6706957" id="6">
+            <text-property name="content"><![CDATA[http://localhost:8700/iportal/iv?__report=%2fBigDataTelco%2fVendTreeMap.rptdocument&amp;closex=true&amp;__vp=ScorecardVolume&amp;fromDashboard=true&amp;showBanner=false&amp;locale=en_US&amp;__format=html]]></text-property>
+        </text>
+    </body>
+    <property name="dashboardView">
+        <dashboard id="4">
+            <property name="tabs">
+                <tab-element name="12d82311-45f1-4451-9d05-eb188bee9d91" id="5">
+                    <property name="title">Vendor Analysis</property>
+                    <property name="sections">
+                        <section id="7">
+                            <property name="width">100%</property>
+                            <property name="gadgets">
+                                <gadget name="50b7d768-4f01-4674-b96c-71be107e54bd" id="8">
+                                    <property name="height">150px</property>
+                                    <property name="zIndex">1</property>
+                                    <property name="isVisible">false</property>
+                                    <property name="content">
+                                        <current-selections id="9"/>
+                                    </property>
+                                    <property name="subscribeTo">
+                                        <event-subscriber>
+                                            <property name="eventName">SELECT_EVENT:SEMANTIC_filter</property>
+                                            <property name="eventObjects">
+                                                <event-object>
+                                                    <property name="gadget">Gadget_77dfd2b9-5626-4cc1-a936-7cdcf12a9d52</property>
+                                                </event-object>
+                                                <event-object>
+                                                    <property name="gadget">Gadget_838ccc68-a182-493e-a350-106761fe90b4</property>
+                                                </event-object>
+                                            </property>
+                                        </event-subscriber>
+                                    </property>
+                                </gadget>
+                                <gadget name="Gadget_8fccef1b-2558-4ee2-b31e-dc12924a3e83" id="10">
+                                    <property name="height">512px</property>
+                                    <property name="title">Vendor ASR Plot</property>
+                                    <property name="externalGadgetURI">/BigDataTelco/VendTop.rptdesign</property>
+                                    <property name="showTitle">false</property>
+                                    <property name="showBorder">true</property>
+                                    <property name="zIndex">2</property>
+                                    <property name="showScrollBar">false</property>
+                                    <property name="content">
+                                        <data-view id="11">
+                                            <list-property name="userProperties">
+                                                <structure>
+                                                    <property name="name">showViewerToolbar</property>
+                                                    <property name="type">boolean</property>
+                                                </structure>
+                                            </list-property>
+                                            <property name="showViewerToolbar">false</property>
+                                            <property name="gadgetType">viewer</property>
+                                            <property name="externalContentRef">
+                                                <external-element-ref>
+                                                    <property name="sourceFile">/BigDataTelco/VendTop_blu.rptdesign</property>
+                                                    <property name="targetBookmark">scatter</property>
+                                                </external-element-ref>
+                                            </property>
+                                            <property name="paramSettings">
+                                                <param-setting>
+                                                    <property name="paramName">pDateBeg</property>
+                                                    <expression name="value">2011-10-01</expression>
+                                                    <property name="isHidden">true</property>
+                                                    <expression name="defaultValue" type="javascript">2011-10-01</expression>
+                                                </param-setting>
+                                                <param-setting>
+                                                    <property name="paramName">pDateEnd</property>
+                                                    <expression name="value">2011-10-02</expression>
+                                                    <property name="isHidden">true</property>
+                                                    <expression name="defaultValue" type="javascript">2011-10-02</expression>
+                                                </param-setting>
+                                            </property>
+                                        </data-view>
+                                    </property>
+                                    <property name="subscribeTo">
+                                        <event-subscriber>
+                                            <property name="eventName">SELECT_EVENT:SEMANTIC_parameter</property>
+                                            <property name="eventObjects">
+                                                <event-object>
+                                                    <property name="appliedTo">pDateBeg</property>
+                                                    <property name="gadget">Gadget_77dfd2b9-5626-4cc1-a936-7cdcf12a9d52</property>
+                                                </event-object>
+                                                <event-object>
+                                                    <property name="appliedTo">pDateEnd</property>
+                                                    <property name="gadget">Gadget_838ccc68-a182-493e-a350-106761fe90b4</property>
+                                                </event-object>
+                                            </property>
+                                        </event-subscriber>
+                                    </property>
+                                </gadget>
+                                <gadget name="af7dbe23-f4d6-43c1-82e8-bd8605835565" id="12">
+                                    <property name="height">618px</property>
+                                    <property name="title">National Performance Treemap</property>
+                                    <property name="gadgetContentType">url</property>
+                                    <property name="showTitle">false</property>
+                                    <property name="showBorder">false</property>
+                                    <property name="zIndex">3</property>
+                                    <property name="showScrollBar">false</property>
+                                    <property name="content">
+                                        <data-view id="13">
+                                            <property name="gadgetType">embedded</property>
+                                            <property name="internalReportLetRef">f5c905d8-9a67-4bfb-93ac-718cc6706957</property>
+                                        </data-view>
+                                    </property>
+                                </gadget>
+                            </property>
+                        </section>
+                    </property>
+                    <property name="freeFormGadgets">
+                        <gadget name="Gadget_77dfd2b9-5626-4cc1-a936-7cdcf12a9d52" id="14">
+                            <property name="x">1077px</property>
+                            <property name="y">8px</property>
+                            <property name="height">26px</property>
+                            <property name="width">139px</property>
+                            <property name="title">Select Begin Date</property>
+                            <property name="showTitle">false</property>
+                            <property name="showBorder">false</property>
+                            <property name="zIndex">3</property>
+                            <property name="content">
+                                <dropdown-data-selector id="15">
+                                    <structure name="dateTimeFormat">
+                                        <property name="category">Custom</property>
+                                        <property name="pattern">YYYY-MM-dd</property>
+                                    </structure>
+                                    <property name="externalContentRef">
+                                        <external-element-ref>
+                                            <property name="sourceFile">/BigDataTelco/VendTop_blu.rptdesign</property>
+                                            <property name="targetBookmark">pDateBeg</property>
+                                            <property name="isNoValueSupported">false</property>
+                                        </external-element-ref>
+                                    </property>
+                                    <property name="operator">eq</property>
+                                    <property name="controlType">list-box</property>
+                                    <property name="dataType">date</property>
+                                    <simple-property-list name="selectedValues">
+                                        <value>10/1/2011</value>
+                                    </simple-property-list>
+                                    <property name="allowTyping">true</property>
+                                    <property name="autoSuggest">true</property>
+                                    <property name="listLimit">1000</property>
+                                </dropdown-data-selector>
+                            </property>
+                            <property name="observers">
+                                <event-subscriber>
+                                    <property name="eventName">SELECT_EVENT:SEMANTIC_filter</property>
+                                    <property name="eventObjects">
+                                        <event-object>
+                                            <property name="gadget">50b7d768-4f01-4674-b96c-71be107e54bd</property>
+                                        </event-object>
+                                    </property>
+                                </event-subscriber>
+                                <event-subscriber>
+                                    <property name="eventName">SELECT_EVENT:SEMANTIC_parameter</property>
+                                    <property name="eventObjects">
+                                        <event-object>
+                                            <property name="appliedTo">pDateBeg</property>
+                                            <property name="gadget">Gadget_8fccef1b-2558-4ee2-b31e-dc12924a3e83</property>
+                                        </event-object>
+                                    </property>
+                                </event-subscriber>
+                            </property>
+                        </gadget>
+                        <gadget name="Gadget_838ccc68-a182-493e-a350-106761fe90b4" id="16">
+                            <property name="x">1240px</property>
+                            <property name="y">8px</property>
+                            <property name="height">25px</property>
+                            <property name="width">130px</property>
+                            <property name="title">Select End Date</property>
+                            <property name="showTitle">false</property>
+                            <property name="showBorder">false</property>
+                            <property name="zIndex">3</property>
+                            <property name="content">
+                                <dropdown-data-selector id="17">
+                                    <structure name="dateTimeFormat">
+                                        <property name="category">Custom</property>
+                                        <property name="pattern">YYYY-MM-dd</property>
+                                    </structure>
+                                    <property name="externalContentRef">
+                                        <external-element-ref>
+                                            <property name="sourceFile">/BigDataTelco/VendTop_blu.rptdesign</property>
+                                            <property name="targetBookmark">pDateEnd</property>
+                                            <property name="isNoValueSupported">false</property>
+                                        </external-element-ref>
+                                    </property>
+                                    <property name="operator">eq</property>
+                                    <property name="controlType">list-box</property>
+                                    <property name="dataType">date</property>
+                                    <simple-property-list name="selectedValues">
+                                        <value>10/2/2011</value>
+                                    </simple-property-list>
+                                    <property name="allowTyping">true</property>
+                                    <property name="autoSuggest">true</property>
+                                    <property name="listLimit">1000</property>
+                                </dropdown-data-selector>
+                            </property>
+                            <property name="observers">
+                                <event-subscriber>
+                                    <property name="eventName">SELECT_EVENT:SEMANTIC_filter</property>
+                                    <property name="eventObjects">
+                                        <event-object>
+                                            <property name="gadget">50b7d768-4f01-4674-b96c-71be107e54bd</property>
+                                        </event-object>
+                                    </property>
+                                </event-subscriber>
+                                <event-subscriber>
+                                    <property name="eventName">SELECT_EVENT:SEMANTIC_parameter</property>
+                                    <property name="eventObjects">
+                                        <event-object>
+                                            <property name="appliedTo">pDateEnd</property>
+                                            <property name="gadget">Gadget_8fccef1b-2558-4ee2-b31e-dc12924a3e83</property>
+                                        </event-object>
+                                    </property>
+                                </event-subscriber>
+                            </property>
+                        </gadget>
+                    </property>
+                </tab-element>
+            </property>
+        </dashboard>
+    </property>
+</report>

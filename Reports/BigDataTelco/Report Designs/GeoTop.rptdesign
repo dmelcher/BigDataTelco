@@ -185,9 +185,6 @@ inner join geography_dim g on g.geo_id = f.geo_id
 inner join date_dim d on d.date_id = f.date_id
 inner join time_dim t on t.time_id = f.time_id
 where
-    d.date = curdate() and
-    t.time_window >=  subtime(curtime(), '00:30:00.0') and
-    t.time_window < curtime() and 
     country_name = 'United States'
 group by
     country_name,

@@ -1,0 +1,84 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<report xmlns="http://www.eclipse.org/birt/2005/design" version="3.2.23" id="1">
+    <property name="layoutPreference">auto layout</property>
+    <list-property name="libraries">
+        <structure>
+            <property name="fileName">ThemesReportItems.rptlibrary</property>
+            <property name="namespace">ThemesReportItems</property>
+        </structure>
+    </list-property>
+    <styles>
+        <style name="crosstab-cell" id="2">
+            <property name="borderBottomColor">#CCCCCC</property>
+            <property name="borderBottomStyle">solid</property>
+            <property name="borderBottomWidth">1pt</property>
+            <property name="borderLeftColor">#CCCCCC</property>
+            <property name="borderLeftStyle">solid</property>
+            <property name="borderLeftWidth">1pt</property>
+            <property name="borderRightColor">#CCCCCC</property>
+            <property name="borderRightStyle">solid</property>
+            <property name="borderRightWidth">1pt</property>
+            <property name="borderTopColor">#CCCCCC</property>
+            <property name="borderTopStyle">solid</property>
+            <property name="borderTopWidth">1pt</property>
+        </style>
+        <style name="crosstab" id="3">
+            <property name="borderBottomColor">#CCCCCC</property>
+            <property name="borderBottomStyle">solid</property>
+            <property name="borderBottomWidth">1pt</property>
+            <property name="borderLeftColor">#CCCCCC</property>
+            <property name="borderLeftStyle">solid</property>
+            <property name="borderLeftWidth">1pt</property>
+            <property name="borderRightColor">#CCCCCC</property>
+            <property name="borderRightStyle">solid</property>
+            <property name="borderRightWidth">1pt</property>
+            <property name="borderTopColor">#CCCCCC</property>
+            <property name="borderTopStyle">solid</property>
+            <property name="borderTopWidth">1pt</property>
+        </style>
+    </styles>
+    <body>
+        <text name="b2bf4118-474a-4b4c-a32c-afab0c2ef9d7" id="6">
+            <text-property name="content"><![CDATA[http://localhost/Scorecard/portal_view.aspx?viewID=183496932&amp;s=MGA05536&amp;d=telco&amp;m=Standard&amp;u=sysadmin&amp;p=lockout123!]]></text-property>
+        </text>
+    </body>
+    <property name="dashboardView">
+        <dashboard id="4">
+            <property name="tabs">
+                <tab-element name="329e796e-361b-48e6-876e-8e1a20c183b9" id="5">
+                    <property name="title">Performance View</property>
+                    <property name="sections">
+                        <section id="7">
+                            <property name="width">100%</property>
+                            <property name="gadgets">
+                                <gadget name="c6b2b62f-d01a-4d08-b91d-26b0418a64fa" id="8">
+                                    <property name="height">150px</property>
+                                    <property name="zIndex">1</property>
+                                    <property name="isVisible">false</property>
+                                    <property name="content">
+                                        <current-selections id="9"/>
+                                    </property>
+                                </gadget>
+                                <gadget name="796837ce-2eb2-4936-926a-8809b373121f" id="10">
+                                    <property name="height">700px</property>
+                                    <property name="title">Perfomance View</property>
+                                    <property name="gadgetContentType">url</property>
+                                    <property name="showTitle">false</property>
+                                    <property name="showBorder">false</property>
+                                    <property name="zIndex">2</property>
+                                    <property name="showScrollBar">false</property>
+                                    <property name="content">
+                                        <data-view id="11">
+                                            <property name="gadgetType">embedded</property>
+                                            <property name="internalReportLetRef">b2bf4118-474a-4b4c-a32c-afab0c2ef9d7</property>
+                                        </data-view>
+                                    </property>
+                                </gadget>
+                            </property>
+                        </section>
+                    </property>
+                </tab-element>
+            </property>
+        </dashboard>
+    </property>
+</report>

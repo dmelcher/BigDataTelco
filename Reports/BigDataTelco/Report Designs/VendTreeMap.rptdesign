@@ -1,6 +1,6 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <report xmlns="http://www.eclipse.org/birt/2005/design" version="3.2.23" id="1">
-    <property name="createdBy">Eclipse BIRT Designer Version 3.7.2.v20120817-1705 Build &lt;3.7.2.v20120817-1705></property>
+    <property name="createdBy">Eclipse BIRT Designer Version 3.7.2.v20121022-1705 Build &lt;3.7.2.v20121022-1705></property>
     <property name="units">in</property>
     <method name="beforeFactory"><![CDATA[vars["gDataXML"] = "[['Location', 'Parent', 'Attempts (size)', 'ASR increase/decrease (color)']," 
 vars["gDataXML"] += "['USA', null, 0,  0]";
@@ -371,6 +371,11 @@ order by
     </styles>
     <page-setup>
         <simple-master-page name="Simple MasterPage" id="2">
+            <property name="type">custom</property>
+            <property name="height">960px</property>
+            <property name="width">1400px</property>
+            <property name="headerHeight">0in</property>
+            <property name="footerHeight">0in</property>
             <page-footer>
                 <text id="3">
                     <property name="contentType">html</property>
@@ -561,11 +566,11 @@ order by
         <label id="164">
             <property name="fontFamily">"Arial"</property>
             <property name="color">gray</property>
-            <text-property name="text">Click to drill down, RMB to drill up, Size - 2012 Medal Count, Color - Difference from 2008</text-property>
+            <text-property name="text">Click to drill down, RMB to drill up, Size of box = xxx, Color of box (green is good, red is bad) = xxx</text-property>
         </label>
         <text id="163">
             <property name="contentType">html</property>
-            <text-property name="content"><![CDATA[<div id="visualization" style="boder:1px solid red;width: 600px; height: 400px;"></div>
+            <text-property name="content"><![CDATA[<div id="visualization" style="boder:1px solid red;width: 1370px; height: 600px;"></div>
   
 <script type="text/javascript" src="http://www.google.com/jsapi"></script>
 

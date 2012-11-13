@@ -1,6 +1,6 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <report xmlns="http://www.eclipse.org/birt/2005/design" version="3.2.23" id="1">
-    <property name="createdBy">Eclipse BIRT Designer Version 3.7.2.v20120817-1705 Build &lt;3.7.2.v20120817-1705></property>
+    <property name="createdBy">Eclipse BIRT Designer Version 3.7.2.v20121022-1705 Build &lt;3.7.2.v20121022-1705></property>
     <property name="units">in</property>
     <property name="iconFile">/templates/blank_report.gif</property>
     <property name="bidiLayoutOrientation">ltr</property>
@@ -182,7 +182,9 @@
     sum(connect_sum)/sum(grp_cnt) as 'ASR'
 from test_fact_agg f
 inner join geography_dim g on g.geo_id = f.geo_id
-where
+inner join date_dim d on d.date_id = f.date_id
+inner join time_dim t on t.time_id = f.time_id
+where 
     country_name = 'United States'
 group by
     country_name,
@@ -558,9 +560,9 @@ order by
                     <expression name="value" type="javascript">"&lt;map showCanvasBorder='0' animation='0' showShadow='1' showBevel='1' showMarkerLabels='1' fillColor='F1f1f1' borderColor='000000' baseFont='Verdana' baseFontSize='10' markerBorderColor='000000' markerBgColor='FF5904' markerRadius='6' legendPosition='bottom' useHoverColor='1' hoverColor='CFE3FA' showMarkerToolTip='1' numberPrefix='' showLabels='0'>" +&#13;
 "	&lt;data>" +  vars["dataEntry"] + "&lt;/data>" +&#13;
 "	&lt;colorRange>" +&#13;
-"		&lt;color minValue='0' maxValue='.2099' displayValue='Way Below Goal' color='CC0001' />" +&#13;
+"		&lt;color minValue='0' maxValue='.2099' displayValue='Far Below Goal' color='CC0001' />" +&#13;
 "		&lt;color minValue='.2100' maxValue='.3099' displayValue='Slightly Below Goal' color='FFCC33' />" +&#13;
-"		&lt;color minValue='.3100' maxValue='1' displayValue='Met Goal' color='069F06' />" +&#13;
+"		&lt;color minValue='.3100' maxValue='1' displayValue='Meeting Goal' color='069F06' />" +&#13;
 "	&lt;/colorRange>" + &#13;
 "	&lt;styles>" +&#13;
 "		&lt;definition>" +&#13;
